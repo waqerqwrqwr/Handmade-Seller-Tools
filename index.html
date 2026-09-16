@@ -1,158 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 <title>
 Handmade Pricing Calculator | Calculate Your Product Price
 </title>
+
 
 <meta name="description" content="
 Free handmade pricing calculator for Etsy sellers and craft businesses.
 Calculate costs, profit margins and recommended selling prices.
 ">
 
+
 <style>
 
 *{
-    box-sizing:border-box;
+box-sizing:border-box;
 }
 
+
 body{
-    margin:0;
-    font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
-    background:#fafafa;
-    color:#222;
-    line-height:1.6;
+
+margin:0;
+
+font-family:
+Arial,
+Helvetica,
+sans-serif;
+
+background:#fafafa;
+
+color:#222;
+
+line-height:1.6;
+
 }
 
 
 .container{
-    max-width:1000px;
-    margin:auto;
-    padding:20px;
+
+max-width:1000px;
+
+margin:auto;
+
+padding:20px;
+
 }
 
 
+
 .hero{
-    text-align:center;
-    padding:70px 20px 40px;
+
+text-align:center;
+
+padding:70px 20px;
+
+background:white;
+
 }
 
 
 .hero h1{
-    font-size:42px;
-    line-height:1.2;
+
+font-size:42px;
+
 }
 
 
 .hero p{
-    font-size:20px;
-    color:#666;
+
+font-size:20px;
+
+color:#666;
+
 }
 
 
+
 .btn{
-    display:inline-block;
-    padding:15px 30px;
-    margin-top:20px;
-    background:#111;
-    color:white;
-    text-decoration:none;
-    border-radius:8px;
+
+display:inline-block;
+
+background:#111;
+
+color:white;
+
+padding:15px 30px;
+
+border-radius:8px;
+
+text-decoration:none;
+
+margin-top:20px;
+
 }
 
 
 .card{
-    background:white;
-    padding:30px;
-    border-radius:12px;
-    margin:30px 0;
-    box-shadow:
-    0 5px 20px rgba(0,0,0,.06);
-}
 
+background:white;
 
-h2{
-    font-size:30px;
+padding:30px;
+
+margin:30px 0;
+
+border-radius:12px;
+
+box-shadow:
+0 5px 20px rgba(0,0,0,.06);
+
 }
 
 
 .grid{
-    display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:20px;
+
 }
 
-
-label{
-    display:block;
-    margin-top:15px;
-    font-weight:bold;
-}
 
 
 input{
-    width:100%;
-    padding:12px;
-    margin-top:5px;
-    border:1px solid #ddd;
-    border-radius:6px;
-    font-size:16px;
+
+width:100%;
+
+padding:12px;
+
+margin:5px 0 15px;
+
+border:1px solid #ddd;
+
+border-radius:6px;
+
 }
+
 
 
 .result{
-    background:#f4f4f4;
-    padding:20px;
-    margin-top:20px;
-    border-radius:10px;
+
+background:#f5f5f5;
+
+padding:20px;
+
+border-radius:10px;
+
 }
+
 
 
 .price{
-    font-size:36px;
-    font-weight:bold;
+
+font-size:36px;
+
+font-weight:bold;
+
 }
 
-
-.feature{
-    padding:15px;
-    background:#fff;
-    border-radius:8px;
-}
-
-
-.faq-item{
-    margin-bottom:25px;
-}
 
 
 footer{
-    text-align:center;
-    padding:40px;
-    color:#777;
-}
 
+text-align:center;
 
-@media(max-width:600px){
+padding:40px;
 
-.hero h1{
-    font-size:30px;
-}
-
-.hero p{
-    font-size:17px;
-}
+color:#777;
 
 }
+
 
 </style>
+
 
 </head>
 
@@ -164,6 +194,7 @@ footer{
 
 
 <section class="hero">
+
 
 <h1>
 How Much Should You Charge
@@ -187,19 +218,13 @@ Calculate My Price Free
 
 
 
+
 <section id="calculator" class="card">
 
 
 <h2>
 Free Handmade Pricing Calculator
 </h2>
-
-
-<p>
-Enter your product costs to calculate
-a profitable selling price.
-</p>
-
 
 
 <div class="grid">
@@ -211,25 +236,24 @@ a profitable selling price.
 Material Cost ($)
 </label>
 
-<input id="material" type="number" value="10">
+<input id="material" value="10">
 
 
 <label>
 Labor Hours
 </label>
 
-<input id="hours" type="number" value="2">
+<input id="hours" value="2">
 
 
 <label>
 Hourly Rate ($)
 </label>
 
-<input id="rate" type="number" value="20">
+<input id="rate" value="20">
 
 
 </div>
-
 
 
 <div>
@@ -239,48 +263,42 @@ Hourly Rate ($)
 Packaging ($)
 </label>
 
-<input id="packaging" type="number" value="2">
+<input id="packaging" value="2">
 
 
 <label>
 Shipping ($)
 </label>
 
-<input id="shipping" type="number" value="5">
+<input id="shipping" value="5">
 
 
 <label>
 Other Costs ($)
 </label>
 
-<input id="other" type="number" value="0">
+<input id="other" value="0">
 
 
 </div>
 
 
-<div>
+</div>
+
 
 
 <label>
 Platform Fee (%)
 </label>
 
-<input id="fee" type="number" value="10">
+<input id="fee" value="10">
 
 
 <label>
-Target Profit Margin (%)
+Profit Margin (%)
 </label>
 
-<input id="margin" type="number" value="30">
-
-
-</div>
-
-
-</div>
-
+<input id="margin" value="30">
 
 
 
@@ -303,29 +321,11 @@ $0
 
 
 <p>
-Break-even Price:
-</p>
-
-<div id="break">
-$0
-</div>
-
-
-
-<p>
 Recommended Selling Price:
 </p>
 
+
 <div class="price" id="recommended">
-$0
-</div>
-
-
-<p>
-Estimated Profit:
-</p>
-
-<div id="profit">
 $0
 </div>
 
@@ -344,31 +344,25 @@ $0
 
 
 <h2>
-Want to manage more products?
+Ready To Manage More Products?
 </h2>
 
 
 <p>
+
 The free calculator helps you price one product.
 
-The Pro Excel Calculator helps handmade sellers
-manage multiple products, track costs,
-and analyze profitability.
+The PRO Excel tool helps handmade sellers manage multiple products,
+track costs and analyze profits.
+
 </p>
+
 
 
 <ul>
 
 <li>
-Manage 100+ products
-</li>
-
-<li>
-Track material costs
-</li>
-
-<li>
-Retail and wholesale pricing
+Product database
 </li>
 
 <li>
@@ -376,19 +370,27 @@ Profit dashboard
 </li>
 
 <li>
-Pricing strategy comparison
+Wholesale calculator
 </li>
+
+<li>
+Pricing management
+</li>
+
 
 </ul>
 
 
 
-<a href="#" class="btn">
+<!-- 已修复跳转 -->
+
+<a href="pro-excel.html" class="btn">
+
 Get Pro Excel Calculator - $9.99
+
 </a>
 
 
-
 </section>
 
 
@@ -399,102 +401,30 @@ Get Pro Excel Calculator - $9.99
 
 
 <h2>
-Why Use This Calculator?
-</h2>
-
-
-<div class="grid">
-
-
-<div class="feature">
-
-<h3>
-Know Your Real Cost
-</h3>
-
-<p>
-Include materials, labor,
-shipping and hidden expenses.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<h3>
-Protect Your Time
-</h3>
-
-<p>
-Your handmade work has value.
-Labor should be included.
-</p>
-
-</div>
-
-
-
-<div class="feature">
-
-<h3>
-Build Profitable Prices
-</h3>
-
-<p>
-Create prices based on profit,
-not guessing.
-</p>
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-<section class="card">
-
-
-<h2>
-How To Price Handmade Products?
+How Handmade Pricing Works
 </h2>
 
 
 <p>
-
-A simple handmade pricing formula:
-
-</p>
-
-
-<h3>
 
 Material Cost
+
 +
+
 Labor Cost
+
 +
+
 Expenses
+
 +
+
 Profit
+
 =
+
 Selling Price
 
-</h3>
-
-
-<p>
-
-Many handmade sellers underprice products
-because they forget labor, packaging,
-shipping and platform fees.
-
 </p>
 
 
@@ -502,114 +432,7 @@ shipping and platform fees.
 
 
 
-
-
-
-<section class="card">
-
-
-<h2>
-FAQ
-</h2>
-
-
-<div class="faq-item">
-
-<h3>
-How do I calculate handmade product prices?
-</h3>
-
-<p>
-Add material costs, labor costs,
-expenses and desired profit margin.
-</p>
-
 </div>
-
-
-
-<div class="faq-item">
-
-<h3>
-Should I include my labor cost?
-</h3>
-
-<p>
-Yes. Your time is part of your product value.
-</p>
-
-</div>
-
-
-
-<div class="faq-item">
-
-<h3>
-Is this calculator free?
-</h3>
-
-<p>
-Yes. The basic calculator is free forever.
-</p>
-
-</div>
-
-
-
-<div class="faq-item">
-
-<h3>
-Do I need an Etsy shop?
-</h3>
-
-<p>
-No. This calculator works for any handmade business.
-</p>
-
-</div>
-
-
-</section>
-
-
-
-
-
-<section class="card">
-
-
-<h2>
-More Handmade Seller Tools Coming Soon
-</h2>
-
-
-<ul>
-
-<li>
-Etsy Profit Calculator
-</li>
-
-<li>
-Crochet Pricing Calculator
-</li>
-
-<li>
-Jewelry Pricing Calculator
-</li>
-
-<li>
-Candle Pricing Calculator
-</li>
-
-</ul>
-
-
-</section>
-
-
-
-</div>
-
 
 
 
@@ -663,7 +486,7 @@ Number(document.getElementById("margin").value)/100;
 
 
 let labor =
-hours * rate;
+hours*rate;
 
 
 let total =
@@ -674,19 +497,8 @@ shipping+
 other;
 
 
-
-let breakEven =
-total/(1-fee);
-
-
-
-let recommended =
+let price =
 total/(1-fee-margin);
-
-
-
-let profit =
-recommended*(1-fee)-total;
 
 
 
@@ -694,16 +506,9 @@ document.getElementById("total").innerHTML=
 "$"+total.toFixed(2);
 
 
-document.getElementById("break").innerHTML=
-"$"+breakEven.toFixed(2);
-
-
 document.getElementById("recommended").innerHTML=
-"$"+recommended.toFixed(2);
+"$"+price.toFixed(2);
 
-
-document.getElementById("profit").innerHTML=
-"$"+profit.toFixed(2);
 
 
 }
@@ -712,12 +517,12 @@ document.getElementById("profit").innerHTML=
 
 document.querySelectorAll("input")
 .forEach(
-input=>{
-input.addEventListener(
+x=>x.addEventListener(
 "input",
 calculate
+)
 );
-});
+
 
 
 calculate();
@@ -726,5 +531,7 @@ calculate();
 </script>
 
 
+
 </body>
+
 </html>
