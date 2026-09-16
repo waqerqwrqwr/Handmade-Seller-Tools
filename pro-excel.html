@@ -1,787 +1,747 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-<title>
-Handmade Product Pricing Calculator PRO | Excel Tool for Handmade Sellers
-</title>
-
-
-<meta name="description" content="
-A professional handmade pricing calculator Excel tool for Etsy sellers and craft businesses.
-Calculate costs, profits and selling prices.
-">
-
-
-<style>
-
-
-*{
-box-sizing:border-box;
-}
-
-
-body{
-
-margin:0;
-
-font-family:
-Arial,
-Helvetica,
-sans-serif;
-
-background:#fafafa;
-
-color:#222;
-
-line-height:1.6;
-
-}
-
-
-
-.container{
-
-max-width:1000px;
-
-margin:auto;
-
-padding:20px;
-
-}
-
-
-
-.hero{
-
-background:white;
-
-text-align:center;
-
-padding:80px 20px;
-
-border-radius:12px;
-
-margin-top:20px;
-
-}
-
-
-
-.hero h1{
-
-font-size:44px;
-
-line-height:1.2;
-
-}
-
-
-
-.hero p{
-
-font-size:20px;
-
-color:#666;
-
-max-width:700px;
-
-margin:auto;
-
-}
-
-
-
-.price{
-
-font-size:40px;
-
-font-weight:bold;
-
-margin:20px;
-
-}
-
-
-
-.btn{
-
-display:inline-block;
-
-background:#111;
-
-color:white;
-
-padding:16px 35px;
-
-border-radius:8px;
-
-text-decoration:none;
-
-margin-top:20px;
-
-}
-
-
-
-.card{
-
-background:white;
-
-padding:35px;
-
-margin:30px 0;
-
-border-radius:12px;
-
-box-shadow:
-0 5px 20px rgba(0,0,0,.06);
-
-}
-
-
-
-h2{
-
-font-size:32px;
-
-}
-
-
-
-.grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(240px,1fr));
-
-gap:20px;
-
-}
-
-
-
-.feature{
-
-background:#f5f5f5;
-
-padding:25px;
-
-border-radius:10px;
-
-}
-
-
-
-.highlight{
-
-background:#111;
-
-color:white;
-
-padding:40px;
-
-border-radius:12px;
-
-text-align:center;
-
-}
-
-
-
-footer{
-
-text-align:center;
-
-padding:40px;
-
-color:#777;
-
-}
-
-
-
-@media(max-width:600px){
-
-
-.hero h1{
-
-font-size:30px;
-
-}
-
-
-}
-
-
-</style>
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Handmade Product Pricing Calculator PRO | Excel Tool for Handmade Sellers
+    </title>
+
+    <meta name="description"
+        content="Handmade Product Pricing Calculator PRO is an Excel pricing and profit management tool for handmade sellers, Etsy creators and craft businesses.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #FAF7F2;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Brand */
+        .brand {
+            padding: 20px 0;
+            font-size: 22px;
+            font-weight: bold;
+            color: #1F6B45;
+        }
+
+        .brand span {
+            display: block;
+            margin-top: 2px;
+            font-size: 13px;
+            font-weight: normal;
+            color: #777;
+        }
+
+        /* Hero */
+        .hero {
+            background: #fff;
+            text-align: center;
+            padding: 70px 30px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            font-size: 46px;
+            line-height: 1.15;
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: auto;
+            font-size: 20px;
+            color: #666;
+        }
+
+        .price {
+            margin: 25px 0 10px;
+            font-size: 42px;
+            font-weight: bold;
+            color: #1F6B45;
+        }
+
+        .price-note {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            margin-top: 22px;
+            padding: 16px 36px;
+            background: #1F6B45;
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.92;
+        }
+
+        /* Cards */
+        .card {
+            background: #fff;
+            padding: 35px;
+            margin: 30px 0;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 32px;
+            line-height: 1.25;
+        }
+
+        .card h3 {
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #555;
+        }
+
+        /* Highlight */
+        .highlight {
+            background: #1F6B45;
+            color: #fff;
+            padding: 45px 35px;
+            border-radius: 16px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .highlight h2 {
+            margin-top: 0;
+            font-size: 32px;
+        }
+
+        .highlight p {
+            margin-bottom: 0;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Features */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .feature {
+            background: #FAF7F2;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .feature h3 {
+            margin-top: 0;
+            color: #1F6B45;
+        }
+
+        /* Product screenshots */
+        .screenshot-card {
+            margin-top: 25px;
+        }
+
+        .screenshot-card h3 {
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .screenshot-card p {
+            margin-top: 0;
+        }
+
+        .screenshot {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid #e5e5e5;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            background: #fff;
+        }
+
+        /* Lists */
+        ul {
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: #fff;
+            text-align: center;
+            padding: 60px 30px;
+            border-radius: 16px;
+            margin: 30px 0;
+        }
+
+        .final-cta h2 {
+            margin-top: 0;
+            font-size: 36px;
+        }
+
+        /* FAQ */
+        .faq-item {
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .container {
+                padding: 14px;
+            }
+
+            .brand {
+                padding: 15px 5px;
+            }
+
+            .hero {
+                padding: 50px 22px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .card {
+                padding: 25px 20px;
+            }
+
+            .card h2,
+            .highlight h2 {
+                font-size: 27px;
+            }
+
+            .final-cta {
+                padding: 45px 20px;
+            }
+
+            .final-cta h2 {
+                font-size: 29px;
+            }
+
+            .price {
+                font-size: 36px;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
+    <div class="container">
+
+        <!-- Brand -->
+        <div class="brand">
+            Handmade Seller Tools
+            <span>Smart Tools For Creative Businesses</span>
+        </div>
+
+        <!-- Hero -->
+        <section class="hero">
+
+            <h1>
+                Stop Guessing Your Handmade Prices
+            </h1>
+
+            <p>
+                A simple Excel tool to calculate your costs,
+                set profitable prices, and manage your handmade products.
+            </p>
+
+            <div class="price">
+                $9.99
+            </div>
+
+            <div class="price-note">
+                One-time purchase · Instant digital download
+            </div>
+
+            <a
+                href="https://payhip.com/b/s1GzF"
+                class="btn"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Get Instant Access
+            </a>
+
+        </section>
+
+        <!-- Problem -->
+        <section class="card">
+
+            <h2>
+                Are You Pricing Your Handmade Products Correctly?
+            </h2>
+
+            <p>
+                Many handmade sellers only calculate the cost of materials.
+                But your real product cost can include much more:
+            </p>
+
+            <ul>
+                <li>Materials</li>
+                <li>Your working hours</li>
+                <li>Packaging</li>
+                <li>Shipping</li>
+                <li>Platform fees</li>
+                <li>Other business expenses</li>
+            </ul>
+
+            <p>
+                When these costs are overlooked, a product can appear profitable
+                while the actual return is much smaller.
+            </p>
+
+        </section>
+
+        <!-- Highlight -->
+        <section class="highlight">
+
+            <h2>
+                Know Your Numbers. Protect Your Profit.
+            </h2>
+
+            <p>
+                Turn handmade pricing from guesswork into a simple,
+                repeatable system.
+            </p>
+
+        </section>
+
+        <!-- Solution -->
+        <section class="card">
+
+            <h2>
+                One Simple Tool To Manage Your Pricing
+            </h2>
+
+            <p>
+                Handmade Product Pricing Calculator PRO helps you answer:
+            </p>
+
+            <ul>
+                <li>How much does my product really cost?</li>
+                <li>What selling price should I consider?</li>
+                <li>How much profit am I making?</li>
+                <li>Which products have stronger margins?</li>
+            </ul>
+
+        </section>
 
+        <!-- Screenshots -->
+        <section class="card">
 
-<div class="container">
+            <h2>
+                See What's Inside
+            </h2>
 
+            <p>
+                Take a look at the actual Excel tool included with your purchase.
+            </p>
 
+            <!-- Dashboard -->
+            <div class="screenshot-card">
 
-<section class="hero">
+                <h3>
+                    1. Business Dashboard
+                </h3>
 
+                <p>
+                    Get a quick overview of your products, prices,
+                    profit margins and overall profitability.
+                </p>
+
+                <img
+                    src="assets/dashboard.png"
+                    class="screenshot"
+                    alt="Handmade Business Dashboard Excel"
+                >
+
+            </div>
+
+            <!-- Pricing Calculator -->
+            <div class="screenshot-card">
+
+                <h3>
+                    2. Pricing Calculator
+                </h3>
+
+                <p>
+                    Enter your costs and calculate labor cost,
+                    break-even price, recommended selling price and estimated profit.
+                </p>
+
+                <img
+                    src="assets/pricing-calculator.png"
+                    class="screenshot"
+                    alt="Handmade Product Pricing Calculator Excel"
+                >
+
+            </div>
+
+            <!-- Product Database -->
+            <div class="screenshot-card">
+
+                <h3>
+                    3. Product Database
+                </h3>
+
+                <p>
+                    Keep your handmade products, costs,
+                    selling prices and profits organized in one place.
+                </p>
+
+                <img
+                    src="assets/product-database.png"
+                    class="screenshot"
+                    alt="Handmade Product Database Excel"
+                >
+
+            </div>
+
+            <!-- Wholesale -->
+            <div class="screenshot-card">
+
+                <h3>
+                    4. Wholesale Calculator
+                </h3>
+
+                <p>
+                    Calculate wholesale pricing and compare your expected profit.
+                </p>
+
+                <img
+                    src="assets/wholesale-calculator.png"
+                    class="screenshot"
+                    alt="Wholesale Pricing Calculator Excel"
+                >
+
+            </div>
+
+        </section>
+
+        <!-- Features -->
+        <section class="card">
+
+            <h2>
+                Everything Included
+            </h2>
+
+            <div class="grid">
+
+                <div class="feature">
+                    <h3>Product Database</h3>
+                    <p>
+                        Organize multiple handmade products
+                        and track their costs and prices.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>Pricing Calculator</h3>
+                    <p>
+                        Calculate total cost,
+                        break-even price and recommended price.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>Wholesale Calculator</h3>
+                    <p>
+                        Create wholesale prices
+                        while keeping an eye on profitability.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>Profit Analysis</h3>
+                    <p>
+                        Review product profitability
+                        and identify stronger-margin products.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Who it's for -->
+        <section class="card">
+
+            <h2>
+                Perfect For Handmade Creators
+            </h2>
+
+            <div class="grid">
+
+                <div class="feature">
+                    <h3>Etsy Sellers</h3>
+                    <p>
+                        Organize pricing and product costs for your Etsy business.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>Crochet Makers</h3>
+                    <p>
+                        Include materials and your time when setting prices.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>Jewelry Creators</h3>
+                    <p>
+                        Track costs and compare product profitability.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>Candle Businesses</h3>
+                    <p>
+                        Keep product pricing and expenses organized.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>Craft Sellers</h3>
+                    <p>
+                        Build a consistent pricing process for your products.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>Small Handmade Brands</h3>
+                    <p>
+                        Manage multiple products in one spreadsheet.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- How it works -->
+        <section class="card">
+
+            <h2>
+                How It Works
+            </h2>
+
+            <h3>
+                Step 1 — Enter Your Costs
+            </h3>
+
+            <p>
+                Add materials, labor, packaging, shipping and other expenses.
+            </p>
 
-<h1>
-Stop Guessing Your Handmade Prices
-</h1>
+            <h3>
+                Step 2 — Calculate Your Price
+            </h3>
 
+            <p>
+                Use the pricing calculator to review your cost and target pricing.
+            </p>
 
-<p>
+            <h3>
+                Step 3 — Analyze Your Profit
+            </h3>
 
-Calculate costs, set profitable prices,
-and manage your handmade business with one simple Excel tool.
+            <p>
+                Use the database and analysis sheets to understand your products.
+            </p>
 
-</p>
+        </section>
 
+        <!-- Product contents -->
+        <section class="card">
 
-<div class="price">
+            <h2>
+                What You Will Receive
+            </h2>
 
-$9.99
+            <ul>
+                <li>Handmade Product Pricing Calculator PRO Excel file</li>
+                <li>Business Dashboard</li>
+                <li>Product Database</li>
+                <li>Pricing Calculator</li>
+                <li>Wholesale Calculator</li>
+                <li>Profit Analysis</li>
+                <li>Instructions</li>
+            </ul>
 
-</div>
+            <p>
+                This is a digital product. No physical item will be shipped.
+            </p>
 
+        </section>
 
+        <!-- FAQ -->
+        <section class="card">
 
-<a class="btn"
-href="https://payhip.com/b/s1GzF">
+            <h2>
+                FAQ
+            </h2>
 
-Get Instant Access
+            <div class="faq-item">
 
-</a>
+                <h3>
+                    Do I need advanced Excel skills?
+                </h3>
 
+                <p>
+                    No. Basic Excel knowledge is enough.
+                    Enter your numbers and use the built-in formulas.
+                </p>
 
+            </div>
 
-</section>
+            <div class="faq-item">
 
+                <h3>
+                    Can I use this for Etsy products?
+                </h3>
 
+                <p>
+                    Yes. The tool is designed for handmade sellers,
+                    including Etsy creators and other craft businesses.
+                </p>
 
+            </div>
 
+            <div class="faq-item">
 
+                <h3>
+                    Can I use it for different handmade products?
+                </h3>
 
+                <p>
+                    Yes. You can use it for jewelry, crochet,
+                    candles, crafts, gifts and many other handmade products.
+                </p>
 
-<section class="card">
+            </div>
 
+            <div class="faq-item">
 
-<h2>
-Are You Pricing Your Handmade Products Correctly?
-</h2>
+                <h3>
+                    Is this a subscription?
+                </h3>
 
+                <p>
+                    No. This is a one-time digital purchase.
+                </p>
 
-<p>
+            </div>
 
-Many handmade sellers only calculate material costs.
+            <div class="faq-item">
 
-But your real product cost includes:
+                <h3>
+                    What software do I need?
+                </h3>
 
-</p>
+                <p>
+                    Microsoft Excel or compatible spreadsheet software.
+                </p>
 
+            </div>
 
-<ul>
+        </section>
 
-<li>
-Materials
-</li>
+        <!-- Final CTA -->
+        <section class="final-cta">
 
+            <h2>
+                Ready To Price Your Products With Confidence?
+            </h2>
 
-<li>
-Your working hours
-</li>
+            <p>
+                Stop guessing your prices.
+                Start working with real numbers.
+            </p>
 
+            <div class="price">
+                $9.99
+            </div>
 
-<li>
-Packaging
-</li>
+            <div class="price-note">
+                One-time purchase · Instant digital download
+            </div>
 
+            <a
+                href="https://payhip.com/b/s1GzF"
+                class="btn"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Buy Handmade Pricing Calculator PRO
+            </a>
 
-<li>
-Shipping
-</li>
+        </section>
 
+    </div>
 
-<li>
-Platform fees
-</li>
-
-
-<li>
-Hidden expenses
-</li>
-
-
-</ul>
-
-
-
-<p>
-
-Without these numbers,
-it is easy to work hard and still earn too little.
-
-</p>
-
-
-</section>
-
-
-
-
-
-
-
-<section class="highlight">
-
-
-<h2>
-Know Your Numbers.
-Protect Your Profit.
-</h2>
-
-
-<p>
-
-Turn your handmade pricing from guessing into a simple system.
-
-</p>
-
-
-</section>
-
-
-
-
-
-
-
-<section class="card">
-
-
-<h2>
-What You Get
-</h2>
-
-
-
-<div class="grid">
-
-
-<div class="feature">
-
-<h3>
-Product Database
-</h3>
-
-
-<p>
-
-Organize all products.
-
-Track:
-
-<br>
-Costs
-
-<br>
-Prices
-
-<br>
-Profit
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="feature">
-
-<h3>
-Pricing Calculator
-</h3>
-
-
-<p>
-
-Automatically calculate:
-
-<br>
-
-Total Cost
-
-<br>
-
-Break-even Price
-
-<br>
-
-Recommended Price
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="feature">
-
-<h3>
-Wholesale Calculator
-</h3>
-
-
-<p>
-
-Create wholesale prices
-without losing profit.
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="feature">
-
-<h3>
-Profit Dashboard
-</h3>
-
-
-<p>
-
-Understand which products
-make the most money.
-
-</p>
-
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<section class="card">
-
-
-<h2>
-Perfect For
-</h2>
-
-
-<ul>
-
-
-<li>
-Etsy Sellers
-</li>
-
-
-<li>
-Crochet Makers
-</li>
-
-
-<li>
-Jewelry Creators
-</li>
-
-
-<li>
-Candle Businesses
-</li>
-
-
-<li>
-Craft Sellers
-</li>
-
-
-<li>
-Small Handmade Brands
-</li>
-
-
-</ul>
-
-
-</section>
-
-
-
-
-
-
-
-<section class="card">
-
-
-<h2>
-How It Works
-</h2>
-
-
-
-<h3>
-Step 1
-</h3>
-
-<p>
-Add your product costs.
-</p>
-
-
-
-<h3>
-Step 2
-</h3>
-
-<p>
-Calculate your selling price.
-</p>
-
-
-
-<h3>
-Step 3
-</h3>
-
-<p>
-Analyze your profit.
-</p>
-
-
-</section>
-
-
-
-
-
-
-
-<section class="card">
-
-
-<h2>
-Inside The Excel Tool
-</h2>
-
-
-<p>
-
-The PRO version includes:
-
-</p>
-
-
-<ul>
-
-
-<li>
-Dashboard
-</li>
-
-
-<li>
-Product Database
-</li>
-
-
-<li>
-Pricing Calculator
-</li>
-
-
-<li>
-Wholesale Calculator
-</li>
-
-
-<li>
-Profit Analysis
-</li>
-
-
-<li>
-Instructions
-</li>
-
-
-</ul>
-
-
-</section>
-
-
-
-
-
-
-
-<section class="card">
-
-
-<h2>
-FAQ
-</h2>
-
-
-
-<h3>
-Do I need advanced Excel skills?
-</h3>
-
-
-<p>
-
-No.
-Basic Excel knowledge is enough.
-
-</p>
-
-
-
-<h3>
-Can I use it for Etsy?
-</h3>
-
-
-<p>
-
-Yes.
-It works for Etsy sellers and other handmade businesses.
-
-</p>
-
-
-
-<h3>
-Is this a subscription?
-</h3>
-
-
-<p>
-
-No.
-This is a one-time purchase.
-
-</p>
-
-
-
-<h3>
-Can I use it for different products?
-</h3>
-
-
-<p>
-
-Yes.
-Use it for candles, jewelry, crochet, crafts and more.
-
-</p>
-
-
-</section>
-
-
-
-
-
-
-
-<section class="hero">
-
-
-<h2>
-
-Ready To Build Better Prices?
-
-</h2>
-
-
-<p>
-
-Stop guessing your prices.
-
-Start using real numbers.
-
-</p>
-
-
-
-<div class="price">
-
-$9.99
-
-</div>
-
-
-
-<a class="btn"
-href="https://payhip.com/b/s1GzF">
-
-Buy Handmade Pricing Calculator PRO
-
-</a>
-
-
-
-</section>
-
-
-
-
-
-
-
-</div>
-
-
-
-<footer>
-
-Handmade Seller Tools © 2026
-
-</footer>
-
-
+    <footer>
+        Handmade Seller Tools © 2026
+    </footer>
 
 </body>
 
-
 </html>
+```
