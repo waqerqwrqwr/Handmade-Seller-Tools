@@ -1,107 +1,730 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Handmade Pricing Calculator — Free Seller Tool</title>
-<meta name="description" content="Free handmade product pricing calculator. Calculate true cost, break-even price, recommended selling price, and estimated profit.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Handmade Pricing Calculator | Calculate Your Product Price
+</title>
+
+<meta name="description" content="
+Free handmade pricing calculator for Etsy sellers and craft businesses.
+Calculate costs, profit margins and recommended selling prices.
+">
+
 <style>
-:root{--bg:#f7f6f2;--card:#fff;--ink:#171717;--muted:#66645e;--line:#e7e4dc;--accent:#171717;--soft:#f0eee8;--good:#16351f}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}
-a{color:inherit}.wrap{max-width:1120px;margin:auto;padding:0 20px}.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;letter-spacing:-.02em}.navlinks{display:flex;gap:22px;font-size:14px;color:var(--muted)}.navlinks a{text-decoration:none}.hero{padding:72px 0 48px;max-width:850px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.14em;font-weight:800;color:var(--muted)}h1{font-size:clamp(42px,7vw,74px);line-height:1.02;letter-spacing:-.055em;margin:12px 0 18px}.lead{font-size:19px;line-height:1.55;color:var(--muted);max-width:720px}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--accent);background:var(--accent);color:#fff;padding:13px 18px;border-radius:12px;font-weight:800;text-decoration:none;cursor:pointer}.btn.light{background:#fff;color:var(--ink);border-color:var(--line)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}.toolgrid{display:grid;grid-template-columns:1.02fr .98fr;gap:22px;align-items:start}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 15px 40px rgba(25,25,25,.05)}h2{margin:0 0 18px;font-size:21px;letter-spacing:-.02em}.field{margin-bottom:14px}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.label{display:flex;justify-content:space-between;gap:10px;font-size:14px;font-weight:750;margin-bottom:7px}.hint{font-size:12px;color:var(--muted);font-weight:500}input{width:100%;border:1px solid #d7d4cc;border-radius:11px;padding:12px 13px;background:#fff;font-size:16px;outline:none}input:focus{border-color:#8f8c83;box-shadow:0 0 0 3px rgba(0,0,0,.05)}.divider{border-top:1px solid var(--line);margin:21px 0}.result{border:1px solid var(--line);border-radius:15px;padding:16px;margin-bottom:11px}.rname{font-size:12px;color:var(--muted);margin-bottom:5px}.rvalue{font-size:31px;font-weight:850;letter-spacing:-.03em}.primary{background:var(--soft);border-color:#dad6cc}.small{font-size:12px;line-height:1.55;color:var(--muted);margin-top:7px}.cta{margin-top:16px;padding:18px;border-radius:15px;background:#fbfaf7;border:1px dashed #d3cfc3}.cta strong{display:block;margin-bottom:6px}.notice{display:none;margin-top:12px;padding:10px 12px;border-radius:10px;background:#f6efdf;font-size:12px;color:#6a5431}.features{padding:78px 0}.featuregrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{padding:22px;background:#fff;border:1px solid var(--line);border-radius:16px}.feature h3{margin:0 0 8px;font-size:17px}.feature p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}.pro{padding:0 0 74px}.probox{background:#171717;color:#fff;border-radius:22px;padding:30px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center}.probox p{color:#c9c7c1;margin:8px 0 0;max-width:700px;line-height:1.55}.probox .btn{background:#fff;color:#111;border-color:#fff}.footer{padding:30px 0 60px;color:var(--muted);font-size:12px}.pill{display:inline-block;padding:6px 9px;border-radius:999px;background:#efede7;font-size:11px;font-weight:800;margin-bottom:10px}@media(max-width:820px){.navlinks{display:none}.toolgrid,.probox{grid-template-columns:1fr}.featuregrid{grid-template-columns:1fr}.hero{padding-top:46px}}@media(max-width:540px){.two{grid-template-columns:1fr}.wrap{padding:0 14px}h1{font-size:43px}}
-</style>
-</head>
-<body>
-<header class="wrap nav">
-  <div class="brand">Handmade Seller Tools</div>
-  <nav class="navlinks"><a href="#calculator">Calculator</a><a href="#how">How it works</a><a href="#pro">Pro Excel</a></nav>
-</header>
-<main>
-<section class="wrap hero">
-  <div class="eyebrow">Free Handmade Seller Tool</div>
-  <h1>How much should you charge for your handmade product?</h1>
-  <p class="lead">Enter your materials, labor, packaging, shipping, platform fees and target profit margin. Get your break-even price and recommended selling price in seconds.</p>
-  <div class="actions"><a class="btn" href="#calculator">Calculate My Price — Free</a><a class="btn light" href="#pro">See Pro Excel</a></div>
-</section>
-<section id="calculator" class="wrap toolgrid">
-  <div class="card">
-    <h2>Your costs</h2>
-    <div class="field"><div class="label">Material cost <span class="hint">per item</span></div><input id="material" type="number" min="0" step="0.01" value="8"></div>
-    <div class="two">
-      <div class="field"><div class="label">Labor hours</div><input id="hours" type="number" min="0" step="0.1" value="2"></div>
-      <div class="field"><div class="label">Hourly rate</div><input id="rate" type="number" min="0" step="0.01" value="20"></div>
-    </div>
-    <div class="two">
-      <div class="field"><div class="label">Packaging</div><input id="packaging" type="number" min="0" step="0.01" value="2"></div>
-      <div class="field"><div class="label">Shipping</div><input id="shipping" type="number" min="0" step="0.01" value="5"></div>
-    </div>
-    <div class="two">
-      <div class="field"><div class="label">Other costs</div><input id="other" type="number" min="0" step="0.01" value="0"></div>
-      <div class="field"><div class="label">Platform fee <span class="hint">% of sale</span></div><input id="fee" type="number" min="0" max="99" step="0.1" value="10"></div>
-    </div>
-    <div class="field"><div class="label">Target profit margin <span class="hint">% of sale</span></div><input id="margin" type="number" min="0" max="99" step="0.1" value="30"></div>
-    <button class="btn" style="width:100%" id="calcBtn">Calculate Price</button>
-    <div class="notice" id="warning">Your fee + target margin must be below 100%.</div>
-    <div class="divider"></div>
-    <div class="small">This calculator treats labor as a real cost. Platform fee and target profit margin are calculated as percentages of the final selling price.</div>
-  </div>
-  <div class="card">
-    <h2>Your results</h2>
-    <div class="result"><div class="rname">Total cost</div><div class="rvalue" id="totalCost">$55.00</div><div class="small">Materials + labor + packaging + shipping + other costs.</div></div>
-    <div class="result"><div class="rname">Break-even price</div><div class="rvalue" id="breakEven">$61.11</div><div class="small">Approximate price needed to cover your costs after the platform fee.</div></div>
-    <div class="result primary"><div class="rname">Recommended selling price</div><div class="rvalue" id="recommended">$91.67</div><div class="small" id="profitText">Target profit margin: 30.0%</div></div>
-    <div class="result"><div class="rname">Estimated profit per item</div><div class="rvalue" id="profit">$27.50</div></div>
-    <div class="result"><div class="rname">Estimated margin after fee</div><div class="rvalue" id="actualMargin">30.0%</div></div>
-    <div class="cta">
-      <strong>Need to price 50–100 products?</strong>
-      <div class="small">The Pro Excel version adds product tracking, bulk calculations, retail/wholesale pricing and a dashboard.</div>
-      <a class="btn" style="width:100%;margin-top:12px" href="https://payhip.com/" target="_blank" rel="noopener">Get Pro Excel</a>
-      <a class="btn light" style="width:100%;margin-top:9px" href="#" id="printBtn">Print / Save Results</a>
-    </div>
-  </div>
-</section>
-<section id="how" class="wrap features">
-  <div class="eyebrow">How it works</div><h2 style="font-size:34px;margin-top:8px">Price with your real costs, not guesswork.</h2>
-  <div class="featuregrid">
-    <div class="feature"><span class="pill">01</span><h3>Enter your costs</h3><p>Add materials, time, packaging, shipping and any other direct costs.</p></div>
-    <div class="feature"><span class="pill">02</span><h3>Set your margin</h3><p>Choose your platform fee and the profit margin you want to keep.</p></div>
-    <div class="feature"><span class="pill">03</span><h3>Get a price</h3><p>See total cost, break-even price, recommended price and estimated profit.</p></div>
-  </div>
-</section>
-<section id="pro" class="wrap pro">
-  <div class="probox">
-    <div><div class="eyebrow" style="color:#bcbab4">Pro Excel</div><h2 style="font-size:34px;margin:7px 0 0">Turn one calculation into a product pricing system.</h2><p>Manage multiple products, compare pricing strategies, calculate wholesale and retail prices, and track profitability in one spreadsheet.</p></div>
-    <a class="btn" href="https://payhip.com/" target="_blank" rel="noopener">Get Pro Excel</a>
-  </div>
-</section>
-</main>
-<footer class="wrap footer">Planning aid only. Actual marketplace fees, taxes, discounts, refunds, shipping and payment-processing costs vary by platform and seller.</footer>
-<script>
-const ids=['material','hours','rate','packaging','shipping','other','fee','margin'];
-const $=id=>document.getElementById(id);
-const num=id=>{const v=parseFloat($(id).value);return Number.isFinite(v)&&v>=0?v:0};
-const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(Number.isFinite(n)?n:0);
-function calculate(){
- const material=num('material'),hours=num('hours'),rate=num('rate'),packaging=num('packaging'),shipping=num('shipping'),other=num('other');
- const fee=num('fee')/100,margin=num('margin')/100;
- const total=material+hours*rate+packaging+shipping+other;
- const be=fee<1?total/(1-fee):Infinity;
- const denom=1-fee-margin;
- const rec=denom>0?total/denom:Infinity;
- const profit=Number.isFinite(rec)?rec*(1-fee)-total:Infinity;
- const actual=Number.isFinite(rec)&&rec>0?profit/rec:0;
- $('totalCost').textContent=money(total);
- $('breakEven').textContent=Number.isFinite(be)?money(be):'—';
- $('recommended').textContent=Number.isFinite(rec)?money(rec):'—';
- $('profit').textContent=Number.isFinite(profit)?money(profit):'—';
- $('actualMargin').textContent=Number.isFinite(rec)?(actual*100).toFixed(1)+'%':'—';
- $('profitText').textContent='Target profit margin: '+(margin*100).toFixed(1)+'%';
- $('warning').style.display=denom<=0?'block':'none';
+
+*{
+    box-sizing:border-box;
 }
-ids.forEach(id=>$(id).addEventListener('input',calculate));
-$('calcBtn').addEventListener('click',calculate);
-$('printBtn').addEventListener('click',e=>{e.preventDefault();window.print()});
+
+body{
+    margin:0;
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+    background:#fafafa;
+    color:#222;
+    line-height:1.6;
+}
+
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+}
+
+
+.hero{
+    text-align:center;
+    padding:70px 20px 40px;
+}
+
+
+.hero h1{
+    font-size:42px;
+    line-height:1.2;
+}
+
+
+.hero p{
+    font-size:20px;
+    color:#666;
+}
+
+
+.btn{
+    display:inline-block;
+    padding:15px 30px;
+    margin-top:20px;
+    background:#111;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    margin:30px 0;
+    box-shadow:
+    0 5px 20px rgba(0,0,0,.06);
+}
+
+
+h2{
+    font-size:30px;
+}
+
+
+.grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+
+label{
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+
+input{
+    width:100%;
+    padding:12px;
+    margin-top:5px;
+    border:1px solid #ddd;
+    border-radius:6px;
+    font-size:16px;
+}
+
+
+.result{
+    background:#f4f4f4;
+    padding:20px;
+    margin-top:20px;
+    border-radius:10px;
+}
+
+
+.price{
+    font-size:36px;
+    font-weight:bold;
+}
+
+
+.feature{
+    padding:15px;
+    background:#fff;
+    border-radius:8px;
+}
+
+
+.faq-item{
+    margin-bottom:25px;
+}
+
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:#777;
+}
+
+
+@media(max-width:600px){
+
+.hero h1{
+    font-size:30px;
+}
+
+.hero p{
+    font-size:17px;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<section class="hero">
+
+<h1>
+How Much Should You Charge
+For Your Handmade Products?
+</h1>
+
+
+<p>
+Calculate your costs, profit margin,
+and recommended selling price in seconds.
+</p>
+
+
+<a href="#calculator" class="btn">
+Calculate My Price Free
+</a>
+
+
+</section>
+
+
+
+
+<section id="calculator" class="card">
+
+
+<h2>
+Free Handmade Pricing Calculator
+</h2>
+
+
+<p>
+Enter your product costs to calculate
+a profitable selling price.
+</p>
+
+
+
+<div class="grid">
+
+
+<div>
+
+<label>
+Material Cost ($)
+</label>
+
+<input id="material" type="number" value="10">
+
+
+<label>
+Labor Hours
+</label>
+
+<input id="hours" type="number" value="2">
+
+
+<label>
+Hourly Rate ($)
+</label>
+
+<input id="rate" type="number" value="20">
+
+
+</div>
+
+
+
+<div>
+
+
+<label>
+Packaging ($)
+</label>
+
+<input id="packaging" type="number" value="2">
+
+
+<label>
+Shipping ($)
+</label>
+
+<input id="shipping" type="number" value="5">
+
+
+<label>
+Other Costs ($)
+</label>
+
+<input id="other" type="number" value="0">
+
+
+</div>
+
+
+<div>
+
+
+<label>
+Platform Fee (%)
+</label>
+
+<input id="fee" type="number" value="10">
+
+
+<label>
+Target Profit Margin (%)
+</label>
+
+<input id="margin" type="number" value="30">
+
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="result">
+
+
+<h3>
+Your Pricing Results
+</h3>
+
+
+<p>
+Total Cost:
+</p>
+
+<div id="total">
+$0
+</div>
+
+
+
+<p>
+Break-even Price:
+</p>
+
+<div id="break">
+$0
+</div>
+
+
+
+<p>
+Recommended Selling Price:
+</p>
+
+<div class="price" id="recommended">
+$0
+</div>
+
+
+<p>
+Estimated Profit:
+</p>
+
+<div id="profit">
+$0
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="card">
+
+
+<h2>
+Want to manage more products?
+</h2>
+
+
+<p>
+The free calculator helps you price one product.
+
+The Pro Excel Calculator helps handmade sellers
+manage multiple products, track costs,
+and analyze profitability.
+</p>
+
+
+<ul>
+
+<li>
+Manage 100+ products
+</li>
+
+<li>
+Track material costs
+</li>
+
+<li>
+Retail and wholesale pricing
+</li>
+
+<li>
+Profit dashboard
+</li>
+
+<li>
+Pricing strategy comparison
+</li>
+
+</ul>
+
+
+
+<a href="#" class="btn">
+Get Pro Excel Calculator - $9.99
+</a>
+
+
+
+</section>
+
+
+
+
+
+<section class="card">
+
+
+<h2>
+Why Use This Calculator?
+</h2>
+
+
+<div class="grid">
+
+
+<div class="feature">
+
+<h3>
+Know Your Real Cost
+</h3>
+
+<p>
+Include materials, labor,
+shipping and hidden expenses.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<h3>
+Protect Your Time
+</h3>
+
+<p>
+Your handmade work has value.
+Labor should be included.
+</p>
+
+</div>
+
+
+
+<div class="feature">
+
+<h3>
+Build Profitable Prices
+</h3>
+
+<p>
+Create prices based on profit,
+not guessing.
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section class="card">
+
+
+<h2>
+How To Price Handmade Products?
+</h2>
+
+
+<p>
+
+A simple handmade pricing formula:
+
+</p>
+
+
+<h3>
+
+Material Cost
++
+Labor Cost
++
+Expenses
++
+Profit
+=
+Selling Price
+
+</h3>
+
+
+<p>
+
+Many handmade sellers underprice products
+because they forget labor, packaging,
+shipping and platform fees.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+<section class="card">
+
+
+<h2>
+FAQ
+</h2>
+
+
+<div class="faq-item">
+
+<h3>
+How do I calculate handmade product prices?
+</h3>
+
+<p>
+Add material costs, labor costs,
+expenses and desired profit margin.
+</p>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<h3>
+Should I include my labor cost?
+</h3>
+
+<p>
+Yes. Your time is part of your product value.
+</p>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<h3>
+Is this calculator free?
+</h3>
+
+<p>
+Yes. The basic calculator is free forever.
+</p>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<h3>
+Do I need an Etsy shop?
+</h3>
+
+<p>
+No. This calculator works for any handmade business.
+</p>
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section class="card">
+
+
+<h2>
+More Handmade Seller Tools Coming Soon
+</h2>
+
+
+<ul>
+
+<li>
+Etsy Profit Calculator
+</li>
+
+<li>
+Crochet Pricing Calculator
+</li>
+
+<li>
+Jewelry Pricing Calculator
+</li>
+
+<li>
+Candle Pricing Calculator
+</li>
+
+</ul>
+
+
+</section>
+
+
+
+</div>
+
+
+
+
+<footer>
+
+Handmade Seller Tools © 2026
+
+</footer>
+
+
+
+
+
+<script>
+
+
+function calculate(){
+
+
+let material =
+Number(document.getElementById("material").value)||0;
+
+
+let hours =
+Number(document.getElementById("hours").value)||0;
+
+
+let rate =
+Number(document.getElementById("rate").value)||0;
+
+
+let packaging =
+Number(document.getElementById("packaging").value)||0;
+
+
+let shipping =
+Number(document.getElementById("shipping").value)||0;
+
+
+let other =
+Number(document.getElementById("other").value)||0;
+
+
+let fee =
+Number(document.getElementById("fee").value)/100;
+
+
+let margin =
+Number(document.getElementById("margin").value)/100;
+
+
+
+let labor =
+hours * rate;
+
+
+let total =
+material+
+labor+
+packaging+
+shipping+
+other;
+
+
+
+let breakEven =
+total/(1-fee);
+
+
+
+let recommended =
+total/(1-fee-margin);
+
+
+
+let profit =
+recommended*(1-fee)-total;
+
+
+
+document.getElementById("total").innerHTML=
+"$"+total.toFixed(2);
+
+
+document.getElementById("break").innerHTML=
+"$"+breakEven.toFixed(2);
+
+
+document.getElementById("recommended").innerHTML=
+"$"+recommended.toFixed(2);
+
+
+document.getElementById("profit").innerHTML=
+"$"+profit.toFixed(2);
+
+
+}
+
+
+
+document.querySelectorAll("input")
+.forEach(
+input=>{
+input.addEventListener(
+"input",
+calculate
+);
+});
+
+
 calculate();
+
+
 </script>
+
+
 </body>
 </html>
