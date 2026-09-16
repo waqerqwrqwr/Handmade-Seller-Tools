@@ -1,537 +1,1060 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-<title>
-Handmade Pricing Calculator | Calculate Your Product Price
-</title>
-
-
-<meta name="description" content="
-Free handmade pricing calculator for Etsy sellers and craft businesses.
-Calculate costs, profit margins and recommended selling prices.
-">
-
-
-<style>
-
-*{
-box-sizing:border-box;
-}
-
-
-body{
-
-margin:0;
-
-font-family:
-Arial,
-Helvetica,
-sans-serif;
-
-background:#fafafa;
-
-color:#222;
-
-line-height:1.6;
-
-}
-
-
-.container{
-
-max-width:1000px;
-
-margin:auto;
-
-padding:20px;
-
-}
-
-
-
-.hero{
-
-text-align:center;
-
-padding:70px 20px;
-
-background:white;
-
-}
-
-
-.hero h1{
-
-font-size:42px;
-
-}
-
-
-.hero p{
-
-font-size:20px;
-
-color:#666;
-
-}
-
-
-
-.btn{
-
-display:inline-block;
-
-background:#111;
-
-color:white;
-
-padding:15px 30px;
-
-border-radius:8px;
-
-text-decoration:none;
-
-margin-top:20px;
-
-}
-
-
-.card{
-
-background:white;
-
-padding:30px;
-
-margin:30px 0;
-
-border-radius:12px;
-
-box-shadow:
-0 5px 20px rgba(0,0,0,.06);
-
-}
-
-
-.grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(250px,1fr));
-
-gap:20px;
-
-}
-
-
-
-input{
-
-width:100%;
-
-padding:12px;
-
-margin:5px 0 15px;
-
-border:1px solid #ddd;
-
-border-radius:6px;
-
-}
-
-
-
-.result{
-
-background:#f5f5f5;
-
-padding:20px;
-
-border-radius:10px;
-
-}
-
-
-
-.price{
-
-font-size:36px;
-
-font-weight:bold;
-
-}
-
-
-
-footer{
-
-text-align:center;
-
-padding:40px;
-
-color:#777;
-
-}
-
-
-</style>
-
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Handmade Pricing Calculator | Free Tool for Handmade Sellers
+    </title>
+
+    <meta name="description"
+        content="Free handmade pricing calculator for Etsy sellers and craft businesses. Calculate your real product cost, break-even price, recommended selling price and profit.">
+
+    <meta name="keywords"
+        content="handmade pricing calculator, Etsy pricing calculator, craft pricing calculator, handmade seller tools, product pricing">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #FAF7F2;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            padding: 22px 0;
+        }
+
+        .brand {
+            font-size: 23px;
+            font-weight: 700;
+            color: #1F6B45;
+        }
+
+        .brand-subtitle {
+            margin-top: 2px;
+            font-size: 13px;
+            color: #777;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            padding: 48px 0 28px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            max-width: 850px;
+            margin: 0 auto 18px;
+            font-size: 46px;
+            line-height: 1.15;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #666;
+            font-size: 19px;
+        }
+
+        .hero-note {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* =========================
+           CALCULATOR
+        ========================= */
+
+        .calculator-wrapper {
+            margin: 30px 0 36px;
+        }
+
+        .calculator-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: #fff;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.07);
+            border: 1px solid #eee;
+        }
+
+        .calculator-left {
+            padding: 38px;
+            border-right: 1px solid #eee;
+        }
+
+        .calculator-right {
+            padding: 38px;
+            background: #FCFDFC;
+        }
+
+        .section-title {
+            margin: 0 0 8px;
+            font-size: 28px;
+            line-height: 1.25;
+        }
+
+        .section-description {
+            margin: 0 0 22px;
+            color: #666;
+            font-size: 15px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .input-help {
+            display: block;
+            margin-top: 4px;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 13px;
+            border: 1px solid #D9DED9;
+            border-radius: 9px;
+            font-size: 16px;
+            background: #fff;
+            color: #222;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .input-group input:focus {
+            border-color: #1F6B45;
+            box-shadow: 0 0 0 3px rgba(31, 107, 69, 0.08);
+        }
+
+        .input-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .result-title {
+            margin: 0 0 8px;
+            font-size: 28px;
+            line-height: 1.25;
+        }
+
+        .result-description {
+            margin: 0 0 25px;
+            color: #666;
+            font-size: 15px;
+        }
+
+        .result-item {
+            padding: 17px 0;
+            border-bottom: 1px solid #E9EEE9;
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-label {
+            margin-bottom: 3px;
+            font-size: 13px;
+            color: #777;
+        }
+
+        .result-value {
+            font-size: 25px;
+            font-weight: 700;
+            color: #222;
+        }
+
+        .recommended-box {
+            margin: 20px 0 5px;
+            padding: 22px;
+            background: #EEF7F0;
+            border: 1px solid #D7EBDD;
+            border-radius: 13px;
+        }
+
+        .recommended-box .result-label {
+            color: #4A6A54;
+        }
+
+        .recommended-price {
+            font-size: 40px;
+            line-height: 1.1;
+            color: #1F6B45;
+            font-weight: 800;
+        }
+
+        .result-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0 25px;
+        }
+
+        .result-grid .result-item {
+            padding-right: 5px;
+        }
+
+        /* =========================
+           PRO CTA
+        ========================= */
+
+        .pro-card {
+            margin: 0 0 55px;
+            padding: 32px 35px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 7px 25px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
+        }
+
+        .pro-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .pro-content h2 {
+            margin: 0 0 8px;
+            font-size: 26px;
+        }
+
+        .pro-content p {
+            margin: 0;
+            color: #666;
+            max-width: 660px;
+        }
+
+        .btn {
+            display: inline-block;
+            flex-shrink: 0;
+            padding: 14px 24px;
+            background: #1F6B45;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 9px;
+            font-weight: 700;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.93;
+        }
+
+        /* =========================
+           CONTENT SECTIONS
+        ========================= */
+
+        .content-card {
+            margin-bottom: 30px;
+            padding: 34px;
+            background: #fff;
+            border-radius: 16px;
+            border: 1px solid #eee;
+        }
+
+        .content-card h2 {
+            margin-top: 0;
+            font-size: 29px;
+            line-height: 1.25;
+        }
+
+        .content-card p {
+            color: #555;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .feature {
+            padding: 22px;
+            background: #FAF7F2;
+            border-radius: 12px;
+        }
+
+        .feature h3 {
+            margin-top: 0;
+            margin-bottom: 7px;
+            color: #1F6B45;
+        }
+
+        .feature p {
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+
+        /* =========================
+           FAQ
+        ========================= */
+
+        .faq-item {
+            padding: 18px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item h3 {
+            margin: 0 0 7px;
+            font-size: 18px;
+        }
+
+        .faq-item p {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .calculator-card {
+                grid-template-columns: 1fr;
+            }
+
+            .calculator-left {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+
+            .pro-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 0 14px;
+            }
+
+            .hero {
+                padding: 35px 5px 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+                letter-spacing: -0.5px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .calculator-left,
+            .calculator-right {
+                padding: 24px 20px;
+            }
+
+            .section-title,
+            .result-title {
+                font-size: 25px;
+            }
+
+            .input-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .result-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .recommended-price {
+                font-size: 35px;
+            }
+
+            .pro-card {
+                padding: 25px 20px;
+            }
+
+            .content-card {
+                padding: 25px 20px;
+            }
+        }
+    </style>
 
 </head>
 
-
 <body>
 
+    <div class="container">
 
-<div class="container">
+        <!-- Header -->
+        <header class="header">
 
+            <div class="brand">
+                Handmade Seller Tools
+            </div>
 
-<section class="hero">
+            <div class="brand-subtitle">
+                Smart Tools For Creative Businesses
+            </div>
 
+        </header>
 
-<h1>
-How Much Should You Charge
-For Your Handmade Products?
-</h1>
 
+        <!-- Hero -->
+        <section class="hero">
 
-<p>
-Calculate your costs, profit margin,
-and recommended selling price in seconds.
-</p>
+            <h1>
+                How Much Should You Charge
+                For Your Handmade Products?
+            </h1>
 
+            <p>
+                Calculate your real product cost,
+                break-even price, recommended selling price,
+                and estimated profit in seconds.
+            </p>
 
-<a href="#calculator" class="btn">
-Calculate My Price Free
-</a>
+            <div class="hero-note">
+                Free to use · No signup required
+            </div>
 
+        </section>
 
-</section>
 
+        <!-- Calculator -->
+        <section class="calculator-wrapper" id="calculator">
 
+            <div class="calculator-card">
 
+                <!-- LEFT: INPUT -->
+                <div class="calculator-left">
 
+                    <h2 class="section-title">
+                        Enter Your Costs
+                    </h2>
 
-<section id="calculator" class="card">
+                    <p class="section-description">
+                        Add the costs for one handmade product.
+                    </p>
 
 
-<h2>
-Free Handmade Pricing Calculator
-</h2>
+                    <div class="input-group">
 
+                        <label for="material">
+                            Material Cost ($)
+                        </label>
 
-<div class="grid">
+                        <input
+                            id="material"
+                            type="number"
+                            min="0"
+                            step="0.01"
+                            value="10"
+                        >
 
+                        <span class="input-help">
+                            Fabric, yarn, beads, wax, packaging materials, etc.
+                        </span>
 
-<div>
+                    </div>
 
-<label>
-Material Cost ($)
-</label>
 
-<input id="material" value="10">
+                    <div class="input-row">
 
+                        <div class="input-group">
 
-<label>
-Labor Hours
-</label>
+                            <label for="hours">
+                                Labor Hours
+                            </label>
 
-<input id="hours" value="2">
+                            <input
+                                id="hours"
+                                type="number"
+                                min="0"
+                                step="0.1"
+                                value="2"
+                            >
 
+                        </div>
 
-<label>
-Hourly Rate ($)
-</label>
 
-<input id="rate" value="20">
+                        <div class="input-group">
 
+                            <label for="rate">
+                                Hourly Rate ($)
+                            </label>
 
-</div>
+                            <input
+                                id="rate"
+                                type="number"
+                                min="0"
+                                step="0.01"
+                                value="20"
+                            >
 
+                        </div>
 
-<div>
+                    </div>
 
 
-<label>
-Packaging ($)
-</label>
+                    <div class="input-row">
 
-<input id="packaging" value="2">
+                        <div class="input-group">
 
+                            <label for="packaging">
+                                Packaging ($)
+                            </label>
 
-<label>
-Shipping ($)
-</label>
+                            <input
+                                id="packaging"
+                                type="number"
+                                min="0"
+                                step="0.01"
+                                value="2"
+                            >
 
-<input id="shipping" value="5">
+                        </div>
 
 
-<label>
-Other Costs ($)
-</label>
+                        <div class="input-group">
 
-<input id="other" value="0">
+                            <label for="shipping">
+                                Shipping ($)
+                            </label>
 
+                            <input
+                                id="shipping"
+                                type="number"
+                                min="0"
+                                step="0.01"
+                                value="5"
+                            >
 
-</div>
+                        </div>
 
+                    </div>
 
-</div>
 
+                    <div class="input-group">
 
+                        <label for="other">
+                            Other Costs ($)
+                        </label>
 
-<label>
-Platform Fee (%)
-</label>
+                        <input
+                            id="other"
+                            type="number"
+                            min="0"
+                            step="0.01"
+                            value="0"
+                        >
 
-<input id="fee" value="10">
+                    </div>
 
 
-<label>
-Profit Margin (%)
-</label>
+                    <div class="input-row">
 
-<input id="margin" value="30">
+                        <div class="input-group">
 
+                            <label for="fee">
+                                Platform Fee (%)
+                            </label>
 
+                            <input
+                                id="fee"
+                                type="number"
+                                min="0"
+                                max="99"
+                                step="0.1"
+                                value="10"
+                            >
 
-<div class="result">
+                        </div>
 
 
-<h3>
-Your Pricing Results
-</h3>
+                        <div class="input-group">
 
+                            <label for="margin">
+                                Target Profit Margin (%)
+                            </label>
 
-<p>
-Total Cost:
-</p>
+                            <input
+                                id="margin"
+                                type="number"
+                                min="0"
+                                max="99"
+                                step="0.1"
+                                value="30"
+                            >
 
-<div id="total">
-$0
-</div>
+                        </div>
 
+                    </div>
 
+                </div>
 
-<p>
-Recommended Selling Price:
-</p>
 
+                <!-- RIGHT: RESULTS -->
+                <div class="calculator-right">
 
-<div class="price" id="recommended">
-$0
-</div>
+                    <h2 class="result-title">
+                        Your Pricing Results
+                    </h2>
 
+                    <p class="result-description">
+                        Your numbers update automatically as you type.
+                    </p>
 
 
-</div>
+                    <div class="result-grid">
 
+                        <div class="result-item">
 
-</section>
+                            <div class="result-label">
+                                Labor Cost
+                            </div>
 
+                            <div class="result-value" id="labor">
+                                $40.00
+                            </div>
 
+                        </div>
 
 
+                        <div class="result-item">
 
-<section class="card">
+                            <div class="result-label">
+                                Total Cost
+                            </div>
 
+                            <div class="result-value" id="total">
+                                $57.00
+                            </div>
 
-<h2>
-Ready To Manage More Products?
-</h2>
+                        </div>
 
 
-<p>
+                        <div class="result-item">
 
-The free calculator helps you price one product.
+                            <div class="result-label">
+                                Break-even Price
+                            </div>
 
-The PRO Excel tool helps handmade sellers manage multiple products,
-track costs and analyze profits.
+                            <div class="result-value" id="breakEven">
+                                $63.33
+                            </div>
 
-</p>
+                        </div>
 
 
+                        <div class="result-item">
 
-<ul>
+                            <div class="result-label">
+                                Estimated Profit
+                            </div>
 
-<li>
-Product database
-</li>
+                            <div class="result-value" id="profit">
+                                $28.50
+                            </div>
 
-<li>
-Profit dashboard
-</li>
+                        </div>
 
-<li>
-Wholesale calculator
-</li>
+                    </div>
 
-<li>
-Pricing management
-</li>
 
+                    <div class="recommended-box">
 
-</ul>
+                        <div class="result-label">
+                            Recommended Selling Price
+                        </div>
 
+                        <div class="recommended-price" id="recommended">
+                            $95.00
+                        </div>
 
+                    </div>
 
-<!-- 已修复跳转 -->
 
-<a href="pro-excel.html" class="btn">
+                    <div class="result-item">
 
-Get Pro Excel Calculator - $9.99
+                        <div class="result-label">
+                            Actual Profit Margin
+                        </div>
 
-</a>
+                        <div class="result-value" id="actualMargin">
+                            30.00%
+                        </div>
 
+                    </div>
 
-</section>
+                </div>
 
+            </div>
 
+        </section>
 
 
+        <!-- Single Pro CTA -->
+        <section class="pro-card">
 
-<section class="card">
+            <div class="pro-content">
 
+                <div>
 
-<h2>
-How Handmade Pricing Works
-</h2>
+                    <h2>
+                        Need To Manage More Products?
+                    </h2>
 
+                    <p>
+                        The free calculator is great for individual products.
+                        The PRO Excel tool helps you organize multiple products,
+                        track costs, calculate wholesale prices and analyze profitability.
+                    </p>
 
-<p>
+                </div>
 
-Material Cost
+                <a
+                    href="pro-excel.html"
+                    class="btn"
+                >
+                    Get Pro Excel - $9.99
+                </a>
 
-+
+            </div>
 
-Labor Cost
+        </section>
 
-+
 
-Expenses
+        <!-- Why -->
+        <section class="content-card">
 
-+
+            <h2>
+                Why Handmade Sellers Need Better Pricing
+            </h2>
 
-Profit
+            <div class="features">
 
-=
+                <div class="feature">
 
-Selling Price
+                    <h3>
+                        Know Your Real Costs
+                    </h3>
 
-</p>
+                    <p>
+                        Include materials, labor, packaging,
+                        shipping and other expenses.
+                    </p>
 
+                </div>
 
-</section>
 
+                <div class="feature">
 
+                    <h3>
+                        Value Your Time
+                    </h3>
 
-</div>
+                    <p>
+                        Your working hours are part of the
+                        real cost of creating handmade products.
+                    </p>
 
+                </div>
 
 
-<footer>
+                <div class="feature">
 
-Handmade Seller Tools © 2026
+                    <h3>
+                        Price With A System
+                    </h3>
 
-</footer>
+                    <p>
+                        Use consistent numbers instead of
+                        guessing what your product should cost.
+                    </p>
 
+                </div>
 
+            </div>
 
+        </section>
 
 
-<script>
+        <!-- How Pricing Works -->
+        <section class="content-card">
 
+            <h2>
+                How Handmade Pricing Works
+            </h2>
 
-function calculate(){
+            <p>
+                A practical starting point is to consider the full cost
+                of producing one item, including your labor and expenses,
+                then account for platform fees and your target profit.
+            </p>
 
+            <p>
+                Material Cost + Labor Cost + Expenses + Profit
+                = Selling Price
+            </p>
 
-let material =
-Number(document.getElementById("material").value)||0;
+        </section>
 
 
-let hours =
-Number(document.getElementById("hours").value)||0;
+        <!-- FAQ -->
+        <section class="content-card">
 
+            <h2>
+                Frequently Asked Questions
+            </h2>
 
-let rate =
-Number(document.getElementById("rate").value)||0;
 
+            <div class="faq-item">
 
-let packaging =
-Number(document.getElementById("packaging").value)||0;
+                <h3>
+                    How do I price handmade products?
+                </h3>
 
+                <p>
+                    Start by calculating material costs, labor,
+                    packaging, shipping and other expenses.
+                    Then consider platform fees and your target margin.
+                </p>
 
-let shipping =
-Number(document.getElementById("shipping").value)||0;
+            </div>
 
 
-let other =
-Number(document.getElementById("other").value)||0;
+            <div class="faq-item">
 
+                <h3>
+                    Should I include my own labor?
+                </h3>
 
-let fee =
-Number(document.getElementById("fee").value)/100;
+                <p>
+                    Yes. Your time is part of the cost of creating
+                    a handmade product.
+                </p>
 
+            </div>
 
-let margin =
-Number(document.getElementById("margin").value)/100;
 
+            <div class="faq-item">
 
+                <h3>
+                    Is this calculator free?
+                </h3>
 
-let labor =
-hours*rate;
+                <p>
+                    Yes. The basic calculator is free to use
+                    and does not require an account.
+                </p>
 
+            </div>
 
-let total =
-material+
-labor+
-packaging+
-shipping+
-other;
 
+            <div class="faq-item">
 
-let price =
-total/(1-fee-margin);
+                <h3>
+                    Do I need an Etsy shop?
+                </h3>
 
+                <p>
+                    No. The calculator can be used for many
+                    different handmade businesses and sales channels.
+                </p>
 
+            </div>
 
-document.getElementById("total").innerHTML=
-"$"+total.toFixed(2);
+        </section>
 
+    </div>
 
-document.getElementById("recommended").innerHTML=
-"$"+price.toFixed(2);
 
+    <footer>
+        Handmade Seller Tools © 2026
+    </footer>
 
 
-}
+    <script>
 
+        function getNumber(id) {
 
+            const value =
+                parseFloat(document.getElementById(id).value);
 
-document.querySelectorAll("input")
-.forEach(
-x=>x.addEventListener(
-"input",
-calculate
-)
-);
+            return Number.isFinite(value) ? Math.max(value, 0) : 0;
+        }
 
 
+        function formatCurrency(value) {
 
-calculate();
+            if (!Number.isFinite(value)) {
+                return "$0.00";
+            }
 
+            return "$" + value.toFixed(2);
+        }
 
-</script>
 
+        function calculate() {
 
+            const material = getNumber("material");
+            const hours = getNumber("hours");
+            const rate = getNumber("rate");
+            const packaging = getNumber("packaging");
+            const shipping = getNumber("shipping");
+            const other = getNumber("other");
+
+            const feePercent = getNumber("fee");
+            const marginPercent = getNumber("margin");
+
+            const fee = feePercent / 100;
+            const targetMargin = marginPercent / 100;
+
+            const labor = hours * rate;
+
+            const totalCost =
+                material +
+                labor +
+                packaging +
+                shipping +
+                other;
+
+            let breakEven = 0;
+            let recommended = 0;
+            let estimatedProfit = 0;
+            let actualMargin = 0;
+
+            if (fee < 1) {
+
+                breakEven =
+                    totalCost / (1 - fee);
+
+            }
+
+
+            const denominator =
+                1 - fee - targetMargin;
+
+
+            if (denominator > 0) {
+
+                recommended =
+                    totalCost / denominator;
+
+                estimatedProfit =
+                    recommended * (1 - fee) - totalCost;
+
+                if (recommended > 0) {
+
+                    actualMargin =
+                        estimatedProfit /
+                        recommended;
+
+                }
+
+            }
+
+
+            document.getElementById("labor").textContent =
+                formatCurrency(labor);
+
+            document.getElementById("total").textContent =
+                formatCurrency(totalCost);
+
+            document.getElementById("breakEven").textContent =
+                formatCurrency(breakEven);
+
+            document.getElementById("recommended").textContent =
+                formatCurrency(recommended);
+
+            document.getElementById("profit").textContent =
+                formatCurrency(estimatedProfit);
+
+            document.getElementById("actualMargin").textContent =
+                (actualMargin * 100).toFixed(2) + "%";
+
+        }
+
+
+        const inputs =
+            document.querySelectorAll("input");
+
+
+        inputs.forEach(function(input) {
+
+            input.addEventListener(
+                "input",
+                calculate
+            );
+
+        });
+
+
+        calculate();
+
+    </script>
 
 </body>
 
 </html>
+```
