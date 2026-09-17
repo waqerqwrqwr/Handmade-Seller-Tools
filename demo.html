@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Free handmade product pricing calculator demo from Simple Tool Works. Estimate product cost, suggested selling price, and profit before buying the full Excel workbook.">
+<meta name="robots" content="index,follow"><link rel="canonical" href="https://simpletoolworks.com/demo.html">
+<title>Free Handmade Product Pricing Calculator — Simple Tool Works</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header"><div class="container nav-wrap">
+<a class="brand" href="index.html"><span class="brand-mark">ST</span><span>Simple Tool Works</span></a>
+<nav class="nav" aria-label="Primary navigation"><a href="index.html#products">Products</a><a href="demo.html">Free Tool</a><a href="blog/index.html">Blog</a><a href="index.html#about">About</a><a class="nav-cta" href="product.html">Shop</a></nav>
+</div></header>
+<main class="demo-page"><div class="container">
+<section class="demo-header"><p class="eyebrow">FREE BROWSER DEMO</p><h1>Try the pricing workflow before you buy.</h1><p>Enter a few sample costs and see how a target margin changes the suggested selling price. This free demo is intentionally simple; the paid Excel workbook includes the full dashboard, product database, and wholesale calculator.</p></section>
+<section class="demo-layout" aria-label="Free pricing calculator">
+<div class="demo-panel"><h2>Your inputs</h2><div class="form-grid">
+<div class="field"><label for="materials">Materials ($)</label><input id="materials" type="number" min="0" step="0.01" value="8"></div>
+<div class="field"><label for="laborHours">Labor hours</label><input id="laborHours" type="number" min="0" step="0.1" value="1"></div>
+<div class="field"><label for="laborRate">Labor rate ($/hr)</label><input id="laborRate" type="number" min="0" step="0.50" value="20"></div>
+<div class="field"><label for="packaging">Packaging ($)</label><input id="packaging" type="number" min="0" step="0.01" value="2"></div>
+<div class="field"><label for="shipping">Shipping ($)</label><input id="shipping" type="number" min="0" step="0.01" value="3"></div>
+<div class="field"><label for="fees">Other fees ($)</label><input id="fees" type="number" min="0" step="0.01" value="2"></div>
+<div class="field full"><label for="margin">Target profit margin (%)</label><input id="margin" type="number" min="0" max="90" step="1" value="40"></div>
+</div><div class="demo-actions"><a class="btn btn-primary" href="#results">Calculate</a><button class="btn-reset" type="button" id="resetBtn">Reset example</button></div></div>
+<div class="demo-result" id="results"><h2>Your estimate</h2><div class="result-grid">
+<div class="result-card"><span>Total cost</span><strong id="totalCost">$0.00</strong></div>
+<div class="result-card primary"><span>Suggested retail price</span><strong id="suggestedPrice">$0.00</strong></div>
+<div class="result-card"><span>Estimated profit</span><strong id="profit">$0.00</strong></div>
+<div class="result-card"><span>Margin at suggested price</span><strong id="actualMargin">0%</strong></div>
+</div>
+<p class="demo-note">Estimate only. This demo does not include every fee, tax rule, or platform-specific charge that may apply to your business.</p>
+<div class="demo-upgrade"><h3>Need the full workbook?</h3><p>Get the complete Excel tool with dashboard, product database, wholesale calculator, and a fuller pricing workflow.</p><a class="btn btn-primary" href="https://payhip.com/b/s1Gz" target="_blank" rel="noopener">Get the full Excel →</a></div>
+</div></section></div></main>
+<footer class="site-footer"><div class="container footer-wrap"><span>© 2026 Simple Tool Works</span><div><a href="index.html">Home</a><a href="product.html">Product</a><a href="blog/index.html">Blog</a></div></div></footer>
+<script>
+(function(){
+  const ids=['materials','laborHours','laborRate','packaging','shipping','fees','margin'];
+  const defaults={materials:8,laborHours:1,laborRate:20,packaging:2,shipping:3,fees:2,margin:40};
+  const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(Number.isFinite(n)?n:0);
+  function val(id){const n=parseFloat(document.getElementById(id).value);return Number.isFinite(n)?Math.max(0,n):0}
+  function calc(){
+    const cost=val('materials')+val('laborHours')*val('laborRate')+val('packaging')+val('shipping')+val('fees');
+    const margin=Math.min(90,val('margin'))/100;
+    const price=margin<1?cost/(1-margin):0;
+    const profit=price-cost;
+    document.getElementById('totalCost').textContent=money(cost);
+    document.getElementById('suggestedPrice').textContent=money(price);
+    document.getElementById('profit').textContent=money(profit);
+    document.getElementById('actualMargin').textContent=price>0?Math.round((profit/price)*100)+'%':'0%';
+  }
+  ids.forEach(id=>document.getElementById(id).addEventListener('input',calc));
+  document.getElementById('resetBtn').addEventListener('click',()=>{ids.forEach(id=>document.getElementById(id).value=defaults[id]);calc();});
+  calc();
+})();
+</script>
+</body></html>

@@ -1,16 +1,16 @@
-Simple Tool Works V4
+Simple Tool Works V5
 
-1. Keep your four product screenshots in the images folder:
-   - dashboard.png
-   - pricing-calculator.png
-   - product-database.png
-   - wholesale-calculator.png
+New in V5:
+- Added demo.html: free browser pricing calculator.
+- Added Free Tool links to the navigation.
+- Added free-demo CTA on the homepage.
+- Added free-demo CTA on the product page.
+- Updated sitemap.xml.
 
-2. Open index.html locally to preview the site.
+Keep these screenshots in images/:
+- dashboard.png
+- pricing-calculator.png
+- product-database.png
+- wholesale-calculator.png
 
-3. The Payhip buy button currently points to:
-   https://payhip.com/b/s1Gz
-
-4. The canonical URLs and sitemap use:
-   https://simpletoolworks.com/
-   Update them only if the final domain changes.
+The demo is a simplified lead-in tool and is not a replacement for the paid Excel workbook.
