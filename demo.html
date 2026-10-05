@@ -1,85 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free Handmade Product Pricing Calculator | Simple Tool Works</title>
-  <meta name="description" content="Use this free handmade product pricing calculator to estimate total cost, suggested selling price, profit, and target margin before buying the full Excel workbook.">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <link rel="canonical" href="https://simpletoolworks.com/demo.html">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Free Handmade Product Pricing Calculator">
-  <meta property="og:description" content="Estimate handmade product cost, selling price, profit, and target margin in your browser.">
-  <meta property="og:url" content="https://simpletoolworks.com/demo.html">
-  <meta property="og:image" content="https://simpletoolworks.com/images/dashboard.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Free Handmade Product Pricing Calculator">
-  <meta name="twitter:description" content="A free browser calculator for handmade product pricing and profit estimates.">
-  <meta name="twitter:image" content="https://simpletoolworks.com/images/dashboard.png">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": ["SoftwareApplication", "WebApplication"],
-    "name": "Free Handmade Product Pricing Calculator",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "All",
-    "offers": {
-      "@type": "Offer",
-      "price": 0,
-      "priceCurrency": "USD"
-    },
-    "url": "https://simpletoolworks.com/demo.html"
-  }
-  </script>
-  <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-<header class="site-header"><div class="container nav-wrap">
-<a class="brand" href="index.html"><span class="brand-mark">ST</span><span>Simple Tool Works</span></a>
-<nav class="nav" aria-label="Primary navigation"><a href="index.html#products">Products</a><a href="demo.html">Free Tool</a><a href="blog/index.html">Blog</a><a href="index.html#about">About</a><a class="nav-cta" href="product.html">Shop</a></nav>
-</div></header>
-<main class="demo-page"><div class="container">
-<section class="demo-header"><p class="eyebrow">FREE BROWSER DEMO</p><h1>Try the pricing workflow before you buy.</h1><p>Enter a few sample costs and see how a target margin changes the suggested selling price. This free demo is intentionally simple; the paid Excel workbook includes the full dashboard, product database, and wholesale calculator.</p></section>
-<section class="demo-layout" aria-label="Free pricing calculator">
-<div class="demo-panel"><h2>Your inputs</h2><div class="form-grid">
-<div class="field"><label for="materials">Materials ($)</label><input id="materials" type="number" min="0" step="0.01" value="8"></div>
-<div class="field"><label for="laborHours">Labor hours</label><input id="laborHours" type="number" min="0" step="0.1" value="1"></div>
-<div class="field"><label for="laborRate">Labor rate ($/hr)</label><input id="laborRate" type="number" min="0" step="0.50" value="20"></div>
-<div class="field"><label for="packaging">Packaging ($)</label><input id="packaging" type="number" min="0" step="0.01" value="2"></div>
-<div class="field"><label for="shipping">Shipping ($)</label><input id="shipping" type="number" min="0" step="0.01" value="3"></div>
-<div class="field"><label for="fees">Other fees ($)</label><input id="fees" type="number" min="0" step="0.01" value="2"></div>
-<div class="field full"><label for="margin">Target profit margin (%)</label><input id="margin" type="number" min="0" max="90" step="1" value="40"></div>
-</div><div class="demo-actions"><a class="btn btn-primary" href="#results">Calculate</a><button class="btn-reset" type="button" id="resetBtn">Reset example</button></div></div>
-<div class="demo-result" id="results"><h2>Your estimate</h2><div class="result-grid">
-<div class="result-card"><span>Total cost</span><strong id="totalCost">$0.00</strong></div>
-<div class="result-card primary"><span>Suggested retail price</span><strong id="suggestedPrice">$0.00</strong></div>
-<div class="result-card"><span>Estimated profit</span><strong id="profit">$0.00</strong></div>
-<div class="result-card"><span>Margin at suggested price</span><strong id="actualMargin">0%</strong></div>
-</div>
-<p class="demo-note">Estimate only. This demo does not include every fee, tax rule, or platform-specific charge that may apply to your business.</p>
-<div class="demo-upgrade"><h3>Need the full workbook?</h3><p>Get the complete Excel tool with dashboard, product database, wholesale calculator, and a fuller pricing workflow.</p><a class="btn btn-primary" href="https://payhip.com/b/s1Gz" target="_blank" rel="noopener">Get the full Excel →</a></div>
-</div></section></div></main>
-<footer class="site-footer"><div class="container footer-wrap"><span>© 2026 Simple Tool Works</span><div><a href="index.html">Home</a><a href="product.html">Product</a><a href="blog/index.html">Blog</a></div></div></footer>
-<script>
-(function(){
-  const ids=['materials','laborHours','laborRate','packaging','shipping','fees','margin'];
-  const defaults={materials:8,laborHours:1,laborRate:20,packaging:2,shipping:3,fees:2,margin:40};
-  const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(Number.isFinite(n)?n:0);
-  function val(id){const n=parseFloat(document.getElementById(id).value);return Number.isFinite(n)?Math.max(0,n):0}
-  function calc(){
-    const cost=val('materials')+val('laborHours')*val('laborRate')+val('packaging')+val('shipping')+val('fees');
-    const margin=Math.min(90,val('margin'))/100;
-    const price=margin<1?cost/(1-margin):0;
-    const profit=price-cost;
-    document.getElementById('totalCost').textContent=money(cost);
-    document.getElementById('suggestedPrice').textContent=money(price);
-    document.getElementById('profit').textContent=money(profit);
-    document.getElementById('actualMargin').textContent=price>0?Math.round((profit/price)*100)+'%':'0%';
-  }
-  ids.forEach(id=>document.getElementById(id).addEventListener('input',calc));
-  document.getElementById('resetBtn').addEventListener('click',()=>{ids.forEach(id=>document.getElementById(id).value=defaults[id]);calc();});
-  calc();
-})();
-</script>
-</body></html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Business Calculators & Seller Tools | Simple Tool Works</title>
+<meta name="description" content="Free online calculators for Etsy sellers, handmade businesses, craft fairs, wholesale pricing, profit margins, markup, break-even analysis, and product profit.">
+<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://simpletoolworks.com/demo.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Free Business Calculators & Seller Tools | Simple Tool Works"><meta property="og:description" content="Free practical calculators for pricing, fees, profit, markup, break-even, and wholesale decisions."><meta property="og:url" content="https://simpletoolworks.com/demo.html"><meta property="og:image" content="https://simpletoolworks.com/images/dashboard.png">
+<link rel="stylesheet" href="styles.css"></head><body>
+<header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html"><span class="brand-mark">ST</span><span>Simple Tool Works</span></a><nav class="nav"><a href="index.html">Home</a><a href="demo.html">Free Tools</a><a href="pro-excel.html">Pro Excel</a><a class="nav-cta" href="pro-excel.html">Shop</a></nav></div></header>
+<main><div class="container breadcrumb"><a href="index.html">Home</a> / Free Tools</div><section class="tool-hero"><div class="container"><p class="eyebrow">FREE SELLER TOOLS</p><h1>Free Business Calculators</h1><p>Use these practical calculators to test pricing, fees, profit, markup, break-even points, craft-fair economics, and wholesale offers before making a decision.</p></div></section>
+<section class="tools-index"><div class="container"><div class="tool-groups"><section class="tool-group"><h2>Etsy & Marketplace</h2><div class="tool-list"><a class="tool-card" href="etsy-pricing-calculator.html"><h3>Etsy Pricing Calculator →</h3><p>Estimate a selling price from costs, fees, and a target margin.</p></a><a class="tool-card" href="etsy-fee-calculator.html"><h3>Etsy Fee Calculator →</h3><p>Estimate percentage fees, processing, fixed fees, and revenue after fees.</p></a><a class="tool-card" href="etsy-profit-calculator.html"><h3>Etsy Profit Calculator →</h3><p>Estimate profit after product costs and editable fee assumptions.</p></a></div></section><section class="tool-group"><h2>Handmade & Craft</h2><div class="tool-list"><a class="tool-card" href="handmade-pricing-calculator.html"><h3>Handmade Pricing Calculator →</h3><p>Include labor, packaging, shipping, overhead, markup, and target margin.</p></a><a class="tool-card" href="craft-fair-pricing-calculator.html"><h3>Craft Fair Pricing Calculator →</h3><p>Plan event pricing around booth costs, sales volume, and payment fees.</p></a></div></section><section class="tool-group"><h2>Profit & Business</h2><div class="tool-list"><a class="tool-card" href="profit-margin-calculator.html"><h3>Profit Margin Calculator →</h3><p>Calculate profit, margin, markup, and target-margin price.</p></a><a class="tool-card" href="markup-calculator.html"><h3>Markup Calculator →</h3><p>Calculate selling price from cost plus markup.</p></a><a class="tool-card" href="break-even-calculator.html"><h3>Break-Even Calculator →</h3><p>Find break-even units and volume needed for target profit.</p></a><a class="tool-card" href="wholesale-pricing-calculator.html"><h3>Wholesale Pricing Calculator →</h3><p>Start from retail price and test wholesale discounts and unit profit.</p></a><a class="tool-card" href="product-profit-calculator.html"><h3>Product Profit Calculator →</h3><p>Estimate per-unit and total product profit at expected sales volume.</p></a></div></section></div></div></section>
+<section class="section"><div class="container"><div class="section-heading"><p class="eyebrow">MORE THAN CALCULATORS</p><h2>Need a reusable spreadsheet workflow?</h2><p>The Pro Excel workbook combines pricing, product data, and wholesale calculations in one reusable file.</p><a class="btn btn-primary" href="pro-excel.html">View Pro Excel</a></div></div></section></main>
+<footer class="site-footer"><div class="container footer-wrap"><span>© 2026 Simple Tool Works</span><div><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div></footer></body></html>
