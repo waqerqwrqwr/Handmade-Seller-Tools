@@ -1,0 +1,10 @@
+Simple Tool Works — Ready To Upload
+
+1. 解压本压缩包。
+2. 将所有 HTML 文件、favicon.svg 和 sitemap.xml 上传到 GitHub 仓库根目录。
+3. 保留现有 index.html、demo.html、pro-excel.html。
+4. 用本包里的 sitemap.xml 替换旧 sitemap.xml。
+5. 提交 GitHub，等待 Cloudflare 自动部署。
+6. 部署成功后，再到 Google Search Console 提交 sitemap.xml。
+
+这一版已经完成：10 个工具页内容增强、真实计算案例、工具集群内链、About/Contact/Privacy/Terms、Breadcrumb Schema、Open Graph、favicon、FAQ Schema 清理、meta keywords 清理、sitemap 更新及断链检查。
