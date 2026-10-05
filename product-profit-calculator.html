@@ -1,32 +1,125 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Product Profit Calculator - Calculate Profit Per Product | Simple Tool Works</title><meta name="description" content="Free product profit calculator. Estimate per-unit profit, profit margin, total revenue, total fees, and total profit from expected sales volume."><meta name="robots" content="index,follow,max-image-preview:large">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product Profit Calculator | Simple Tool Works</title>
+<meta name="description" content="Estimate per-unit profit, profit margin, total revenue, total fees, and total profit across expected sales volume.">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://simpletoolworks.com/product-profit-calculator.html">
-<meta property="og:type" content="website"><meta property="og:title" content="Product Profit Calculator - Calculate Profit Per Product | Simple Tool Works"><meta property="og:description" content="Free product profit calculator. Estimate per-unit profit, profit margin, total revenue, total fees, and total profit from expected sales volume."><meta property="og:url" content="https://simpletoolworks.com/product-profit-calculator.html"><meta property="og:image" content="https://simpletoolworks.com/images/dashboard.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://simpletoolworks.com/images/dashboard.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Product Profit Calculator","url":"https://simpletoolworks.com/product-profit-calculator.html","description":"Free product profit calculator. Estimate per-unit profit, profit margin, total revenue, total fees, and total profit from expected sales volume.","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://simpletoolworks.com/"},{"@type":"ListItem","position":2,"name":"Free Tools","item":"https://simpletoolworks.com/demo.html"},{"@type":"ListItem","position":3,"name":"Product Profit Calculator","item":"https://simpletoolworks.com/product-profit-calculator.html"}]}}</script>
-<link rel="stylesheet" href="styles.css"></head><body>
-<header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html"><span class="brand-mark">ST</span><span>Simple Tool Works</span></a><nav class="nav"><a href="demo.html">Free Tools</a><a href="index.html">Home</a><a href="pro-excel.html">Pro Excel</a><a class="nav-cta" href="pro-excel.html">Shop</a></nav></div></header>
-<main><div class="container breadcrumb"><a href="index.html">Home</a> / <a href="demo.html">Free Tools</a> / Product Profit Calculator</div>
-<section class="tool-hero"><div class="container"><p class="eyebrow">FREE ONLINE CALCULATOR</p><h1>Product Profit Calculator</h1><p>Estimate the real profit from one product and then scale that number across your expected sales volume.</p></div></section>
-<section class="container calculator-wrap"><div class="calculator-card"><h2>Enter your numbers</h2><div class="field-grid"><div class="field"><label for="price">Selling price per unit</label><input id="price" type="number" inputmode="decimal" min="0" value="24" step="0.01"><small>$</small></div><div class="field"><label for="cost">Product cost per unit</label><input id="cost" type="number" inputmode="decimal" min="0" value="8" step="0.01"><small>$</small></div><div class="field"><label for="fees">Percentage fees</label><input id="fees" type="number" inputmode="decimal" min="0" value="8" step="0.01" max="99.99"><small>%</small></div><div class="field"><label for="shipping">Shipping / fulfillment per unit</label><input id="shipping" type="number" inputmode="decimal" min="0" value="2" step="0.01"><small>$</small></div><div class="field"><label for="fixed">Allocated fixed cost per unit</label><input id="fixed" type="number" inputmode="decimal" min="0" value="1" step="0.01"><small>$</small></div><div class="field"><label for="quantity">Expected units sold</label><input id="quantity" type="number" inputmode="decimal" min="0" value="100" step="0.01"><small>units</small></div></div><div class="calc-actions"><button class="primary" id="calc">Calculate</button><button class="secondary" id="reset">Reset</button><button class="secondary" id="copy">Copy Results</button></div></div>
-<div class="calculator-card result-card"><div class="results"><div class="result-main"><span>Profit per unit</span><strong id="mainOut">—</strong></div><div id="rows"></div><div id="notice"></div></div></div></section>
-<section class="container content-section"><div class="content-grid"><article class="info-card"><h2>How it works</h2><div class="formula">Profit per unit = selling price − product cost − percentage fees − shipping/fulfillment − allocated fixed cost</div><h2>Example</h2><p>Imagine 100 units sell for $24 each. Product cost is $8 per unit, shipping and fulfillment is $2, percentage fees are 8%, and allocated fixed cost is $1 per unit. The calculator estimates $11.08 profit per unit, or $1,108 in total profit across 100 units, with a margin of about 46.2%.</p><h2>Important assumptions</h2><p>Use your own costs and rates whenever possible. Results are estimates for planning and comparison, not financial, tax, legal, or marketplace advice.</p></article><aside class="info-card"><h2>Related tools</h2><ul><li><a class="text-link" href="etsy-profit-calculator.html">Etsy Profit Calculator →</a></li><li><a class="text-link" href="profit-margin-calculator.html">Profit Margin Calculator →</a></li><li><a class="text-link" href="break-even-calculator.html">Break-Even Calculator →</a></li></ul>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Product Profit Calculator | Simple Tool Works">
+<meta property="og:description" content="Estimate per-unit profit, profit margin, total revenue, total fees, and total profit across expected sales volume.">
+<meta property="og:url" content="https://simpletoolworks.com/product-profit-calculator.html">
+<meta property="og:image" content="https://simpletoolworks.com/images/dashboard.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://simpletoolworks.com/images/dashboard.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header"><div class="container nav-wrap">
+<a class="brand" href="index.html"><span class="brand-mark">ST</span><span>Simple Tool Works</span></a>
+<nav class="nav"><a href="index.html">Home</a><a href="demo.html">Free Tools</a><a href="pro-excel.html">Pro Excel</a><a class="nav-cta" href="pro-excel.html">Shop</a></nav>
+</div></header>
+<main class="calculator-page">
+<div class="container breadcrumb"><a href="index.html">Home</a> <span>/</span> <a href="demo.html">Free Tools</a> <span>/</span> Product Profit Calculator</div>
+<section class="tool-hero"><div class="container">
+<p class="eyebrow">PROFIT & BUSINESS · FREE ONLINE CALCULATOR</p>
+<h1>Product Profit Calculator</h1>
+<p>Estimate per-unit profit, profit margin, total revenue, total fees, and total profit across expected sales volume.</p>
+</div></section>
+
+<section class="container calc-shell">
+<div class="calculator-card input-card">
+<div class="input-head"><div><h2>Enter your numbers</h2><p>Best for comparing products before you commit to inventory or a listing.</p></div><span class="live-badge">LIVE RESULTS</span></div>
+<div class="field-grid"><div class="field">
+<label for="price">Selling price per unit</label>
+<div class="input-wrap"><input id="price" type="number" inputmode="decimal" min="0" step="0.01" value="24"><span class="input-unit">$</span></div>
+<small>Selling price.</small>
+</div>
+<div class="field">
+<label for="cost">Product cost per unit</label>
+<div class="input-wrap"><input id="cost" type="number" inputmode="decimal" min="0" step="0.01" value="8"><span class="input-unit">$</span></div>
+<small>Product cost.</small>
+</div>
+<div class="field">
+<label for="fees">Percentage fees</label>
+<div class="input-wrap"><input id="fees" type="number" inputmode="decimal" min="0" step="0.01" value="8"><span class="input-unit">%</span></div>
+<small>Marketplace or payment percentage.</small>
+</div>
+<div class="field">
+<label for="shipping">Shipping / fulfillment per unit</label>
+<div class="input-wrap"><input id="shipping" type="number" inputmode="decimal" min="0" step="0.01" value="2"><span class="input-unit">$</span></div>
+<small>Shipping and fulfillment.</small>
+</div>
+<div class="field">
+<label for="fixed">Allocated fixed cost per unit</label>
+<div class="input-wrap"><input id="fixed" type="number" inputmode="decimal" min="0" step="0.01" value="1"><span class="input-unit">$</span></div>
+<small>Allocated fixed cost.</small>
+</div>
+<div class="field">
+<label for="quantity">Expected units sold</label>
+<div class="input-wrap"><input id="quantity" type="number" inputmode="decimal" min="0" step="0.01" value="100"><span class="input-unit">units</span></div>
+<small>Expected sales volume.</small>
+</div></div>
+<div class="calc-actions"><button class="primary" id="calc">Calculate</button><button class="secondary" id="reset">Reset</button></div>
+</div>
+
+<aside class="calculator-card result-card">
+<div class="result-top"><div><div class="result-kicker">Your result</div><div class="result-main"><span>Profit per Unit</span><strong id="mainOut">—</strong></div><div class="result-sub">Updates automatically as you change the inputs.</div></div></div>
+<div class="result-grid" id="metrics"></div>
+<div id="notice"></div>
+<div class="result-actions"><button id="copy">Copy Results</button><button id="tryDemo" onclick="window.scrollTo({top:0,behavior:'smooth'})">Edit Inputs</button></div>
+</aside>
+</section>
+
+<div class="container ad-slot">Advertisement space · This area can later be used for AdSense once the site is approved.</div>
+
+<section class="container content-section">
+<div class="content-grid">
+<article class="info-card">
+<h2>How this calculator works</h2>
+<div class="formula">Profit per unit = selling price − product cost − percentage fees − shipping/fulfillment − allocated fixed cost</div>
+<h2>Example</h2>
+<p>At 100 units sold for $24, with $8 product cost, $2 shipping, 8% fees, and $1 allocated fixed cost, estimated profit is $11.08/unit and $1,108 total profit, with a margin of about 46.2%.</p>
+<h2>Important assumptions</h2>
+<p>Results are planning estimates. Replace the default assumptions with your actual costs, rates, shipping arrangements, discounts, and sales volume. Marketplace and payment fees can change over time.</p>
+</article>
+<aside class="info-card">
+<h2>Related tools</h2>
+<ul><li><a class="text-link" href="etsy-pricing-calculator.html">Etsy Pricing Calculator →</a></li><li><a class="text-link" href="etsy-fee-calculator.html">Etsy Fee Calculator →</a></li><li><a class="text-link" href="etsy-profit-calculator.html">Etsy Profit Calculator →</a></li><li><a class="text-link" href="handmade-pricing-calculator.html">Handmade Pricing Calculator →</a></li></ul>
 <div class="faq">
-<h3>What does this calculator estimate?</h3><p>It uses the inputs you provide to estimate the selected pricing, fee, profit, margin, or break-even result. Change the assumptions to match your own business.</p>
-<h3>Are the results guaranteed?</h3><p>No. The calculator is an estimate. Your actual costs, platform rules, payment fees, shipping arrangements, taxes, returns, discounts, and sales volume can change the result.</p>
-<h3>Can I use this for a different marketplace?</h3><p>Yes, when the relevant rates and cost assumptions can be entered. The calculator does not claim to be an official marketplace calculator.</p>
-</div></aside></div></section></main>
+<h3>Can I use this for my own business?</h3>
+<p>Yes. Enter your own numbers to create a simple planning estimate. The calculators are designed for comparison and everyday decisions.</p>
+<h3>Are these official marketplace calculators?</h3>
+<p>No. They are independent planning tools and do not represent an official marketplace or payment provider.</p>
+</div>
+</aside>
+</div>
+</section>
+</main>
 <footer class="site-footer"><div class="container footer-wrap"><span>© 2026 Simple Tool Works</span><div><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div></footer>
 <script>
 function num(id){return Math.max(0,parseFloat(document.getElementById(id).value)||0)}
 function money(v){return '$'+Number(v).toFixed(2)}
 function pct(v){return Number(v).toFixed(1)+'%'}
-function setMain(v,unit){document.getElementById('mainOut').textContent=typeof v==='string'?v:(unit==='$'?money(v):String(v))}
-function setRows(rows){document.getElementById('rows').innerHTML=rows.map(r=>'<div class="result-row"><span>'+r[0]+'</span><strong>'+r[1]+'</strong></div>').join('')}
-function setNotice(t){document.getElementById('notice').innerHTML=t?'<div class="notice">'+t+'</div>':''}
-function calculate(){const p=num('price'),c=num('cost'),fee=p*num('fees')/100,s=num('shipping'),fixed=num('fixed'),q=Math.max(0,Math.round(num('quantity'))),profit=p-c-fee-s-fixed,margin=p?profit/p*100:0; setMain(profit,'$'); setRows([['Profit margin',pct(margin)],['Total revenue',money(p*q)],['Total fees',money(fee*q)],['Total profit',money(profit*q)]]); setNotice(profit<0?'This product loses money under the current assumptions.':'');}
-document.getElementById('calc').addEventListener('click',calculate); document.querySelectorAll('input').forEach(x=>x.addEventListener('input',calculate));
-document.getElementById('reset').addEventListener('click',()=>location.reload());
-document.getElementById('copy').addEventListener('click',async()=>{const text=document.querySelector('.result-card').innerText; try{await navigator.clipboard.writeText(text); alert('Results copied.')}catch(e){alert(text)}});
-calculate();
-</script></body></html>
+function renderMain(v){document.getElementById('mainOut').textContent=v}
+function renderMetrics(rows){document.getElementById('metrics').innerHTML=rows.map(function(r){return '<div class="metric"><span>'+r[0]+'</span><strong>'+r[1]+'</strong></div>'}).join('')}
+function note(t,type){var el=document.getElementById('notice');el.innerHTML=t?'<div class="result-note '+(type||'')+'">'+t+'</div>':''}
+function calculate(){function calculate(){
+const p=num('price'), c=num('cost'), fee=p*num('fees')/100, s=num('shipping'), fixed=num('fixed'), q=Math.max(0,Math.round(num('quantity')));
+const profit=p-c-fee-s-fixed, margin=p?profit/p*100:null;
+renderMain(money(profit)); renderMetrics([['Profit margin',margin===null?'N/A':pct(margin)],['Total revenue',money(p*q)],['Total fees',money(fee*q)],['Total profit',money(profit*q)]]);
+note(profit<0?'This product loses money under the current assumptions.':'','danger');
+}}
+document.getElementById('calc').addEventListener('click',calculate)
+document.querySelectorAll('input').forEach(function(x){x.addEventListener('input',calculate)})
+document.getElementById('reset').addEventListener('click',function(){location.reload()})
+document.getElementById('copy').addEventListener('click',async function(){
+  var text=document.querySelector('.result-card').innerText;
+  try{await navigator.clipboard.writeText(text);this.textContent='Copied ✓';setTimeout(()=>this.textContent='Copy Results',1400)}
+  catch(e){alert(text)}
+})
+calculate()
+</script>
+</body></html>

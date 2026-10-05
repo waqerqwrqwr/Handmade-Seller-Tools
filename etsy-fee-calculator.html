@@ -1,32 +1,115 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Etsy Fee Calculator - Estimate Etsy Selling Fees | Simple Tool Works</title><meta name="description" content="Free Etsy fee calculator for estimating percentage fees, payment processing, fixed fees, and the amount left after fees."><meta name="robots" content="index,follow,max-image-preview:large">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Etsy Fee Calculator | Simple Tool Works</title>
+<meta name="description" content="Estimate transaction fees, payment processing, fixed fees, and the amount left after selling fees.">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://simpletoolworks.com/etsy-fee-calculator.html">
-<meta property="og:type" content="website"><meta property="og:title" content="Etsy Fee Calculator - Estimate Etsy Selling Fees | Simple Tool Works"><meta property="og:description" content="Free Etsy fee calculator for estimating percentage fees, payment processing, fixed fees, and the amount left after fees."><meta property="og:url" content="https://simpletoolworks.com/etsy-fee-calculator.html"><meta property="og:image" content="https://simpletoolworks.com/images/dashboard.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://simpletoolworks.com/images/dashboard.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Etsy Fee Calculator","url":"https://simpletoolworks.com/etsy-fee-calculator.html","description":"Free Etsy fee calculator for estimating percentage fees, payment processing, fixed fees, and the amount left after fees.","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://simpletoolworks.com/"},{"@type":"ListItem","position":2,"name":"Free Tools","item":"https://simpletoolworks.com/demo.html"},{"@type":"ListItem","position":3,"name":"Etsy Fee Calculator","item":"https://simpletoolworks.com/etsy-fee-calculator.html"}]}}</script>
-<link rel="stylesheet" href="styles.css"></head><body>
-<header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html"><span class="brand-mark">ST</span><span>Simple Tool Works</span></a><nav class="nav"><a href="demo.html">Free Tools</a><a href="index.html">Home</a><a href="pro-excel.html">Pro Excel</a><a class="nav-cta" href="pro-excel.html">Shop</a></nav></div></header>
-<main><div class="container breadcrumb"><a href="index.html">Home</a> / <a href="demo.html">Free Tools</a> / Etsy Fee Calculator</div>
-<section class="tool-hero"><div class="container"><p class="eyebrow">FREE ONLINE CALCULATOR</p><h1>Etsy Fee Calculator</h1><p>Estimate marketplace selling fees from your own rate assumptions, then see the amount that may remain after fees.</p></div></section>
-<section class="container calculator-wrap"><div class="calculator-card"><h2>Enter your numbers</h2><div class="field-grid"><div class="field"><label for="sale">Sale price</label><input id="sale" type="number" inputmode="decimal" min="0" value="32" step="0.01"><small>$</small></div><div class="field"><label for="shippingCharged">Shipping charged to buyer</label><input id="shippingCharged" type="number" inputmode="decimal" min="0" value="0" step="0.01"><small>$</small></div><div class="field"><label for="transaction">Transaction fee rate</label><input id="transaction" type="number" inputmode="decimal" min="0" value="6.5" step="0.01" max="99.99"><small>%</small></div><div class="field"><label for="processing">Payment processing rate</label><input id="processing" type="number" inputmode="decimal" min="0" value="3" step="0.01" max="99.99"><small>%</small></div><div class="field"><label for="fixed">Fixed fee</label><input id="fixed" type="number" inputmode="decimal" min="0" value="0.25" step="0.01"><small>$</small></div><div class="field"><label for="other">Other estimated fees</label><input id="other" type="number" inputmode="decimal" min="0" value="0" step="0.01"><small>$</small></div></div><div class="calc-actions"><button class="primary" id="calc">Calculate</button><button class="secondary" id="reset">Reset</button><button class="secondary" id="copy">Copy Results</button></div></div>
-<div class="calculator-card result-card"><div class="results"><div class="result-main"><span>Estimated fees</span><strong id="mainOut">—</strong></div><div id="rows"></div><div id="notice"></div></div></div></section>
-<section class="container content-section"><div class="content-grid"><article class="info-card"><h2>How it works</h2><div class="formula">Estimated fees = gross amount × percentage fee rates + fixed fees</div><h2>Example</h2><p>Imagine a $32 order with no shipping charged to the buyer. If your transaction fee is 6.5%, payment processing is 3%, and the fixed fee is $0.25, the estimated fees would be about $3.29, leaving about $28.71 after fees. Product cost, labor, packaging, and seller-paid shipping are not included.</p><h2>Important assumptions</h2><p>Use your own costs and rates whenever possible. Results are estimates for planning and comparison, not financial, tax, legal, or marketplace advice.</p></article><aside class="info-card"><h2>Related tools</h2><ul><li><a class="text-link" href="etsy-pricing-calculator.html">Etsy Pricing Calculator →</a></li><li><a class="text-link" href="etsy-profit-calculator.html">Etsy Profit Calculator →</a></li><li><a class="text-link" href="profit-margin-calculator.html">Profit Margin Calculator →</a></li></ul>
+<meta property="og:type" content="website">
+<meta property="og:title" content="Etsy Fee Calculator | Simple Tool Works">
+<meta property="og:description" content="Estimate transaction fees, payment processing, fixed fees, and the amount left after selling fees.">
+<meta property="og:url" content="https://simpletoolworks.com/etsy-fee-calculator.html">
+<meta property="og:image" content="https://simpletoolworks.com/images/dashboard.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://simpletoolworks.com/images/dashboard.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header"><div class="container nav-wrap">
+<a class="brand" href="index.html"><span class="brand-mark">ST</span><span>Simple Tool Works</span></a>
+<nav class="nav"><a href="index.html">Home</a><a href="demo.html">Free Tools</a><a href="pro-excel.html">Pro Excel</a><a class="nav-cta" href="pro-excel.html">Shop</a></nav>
+</div></header>
+<main class="calculator-page">
+<div class="container breadcrumb"><a href="index.html">Home</a> <span>/</span> <a href="demo.html">Free Tools</a> <span>/</span> Etsy Fee Calculator</div>
+<section class="tool-hero"><div class="container">
+<p class="eyebrow">ETSY & MARKETPLACE · FREE ONLINE CALCULATOR</p>
+<h1>Etsy Fee Calculator</h1>
+<p>Estimate transaction fees, payment processing, fixed fees, and the amount left after selling fees.</p>
+</div></section>
+
+<section class="container calc-shell">
+<div class="calculator-card input-card">
+<div class="input-head"><div><h2>Enter your numbers</h2><p>Best for checking fee impact on a single sale.</p></div><span class="live-badge">LIVE RESULTS</span></div>
+<div class="field-grid"><div class="field">
+<label for="sale">Sale price</label>
+<div class="input-wrap"><input id="sale" type="number" inputmode="decimal" min="0" step="0.01" value="32"><span class="input-unit">$</span></div>
+<small>Enter the sale amount.</small>
+</div>
+<div class="field">
+<label for="transaction">Transaction fee</label>
+<div class="input-wrap"><input id="transaction" type="number" inputmode="decimal" min="0" step="0.01" value="6.5"><span class="input-unit">%</span></div>
+<small>Editable assumption.</small>
+</div>
+<div class="field">
+<label for="processing">Payment processing fee</label>
+<div class="input-wrap"><input id="processing" type="number" inputmode="decimal" min="0" step="0.01" value="3"><span class="input-unit">%</span></div>
+<small>Editable assumption.</small>
+</div>
+<div class="field">
+<label for="fixed">Fixed fee</label>
+<div class="input-wrap"><input id="fixed" type="number" inputmode="decimal" min="0" step="0.01" value="0.25"><span class="input-unit">$</span></div>
+<small>Editable assumption.</small>
+</div></div>
+<div class="calc-actions"><button class="primary" id="calc">Calculate</button><button class="secondary" id="reset">Reset</button></div>
+</div>
+
+<aside class="calculator-card result-card">
+<div class="result-top"><div><div class="result-kicker">Your result</div><div class="result-main"><span>Revenue after fees</span><strong id="mainOut">—</strong></div><div class="result-sub">Updates automatically as you change the inputs.</div></div></div>
+<div class="result-grid" id="metrics"></div>
+<div id="notice"></div>
+<div class="result-actions"><button id="copy">Copy Results</button><button id="tryDemo" onclick="window.scrollTo({top:0,behavior:'smooth'})">Edit Inputs</button></div>
+</aside>
+</section>
+
+<div class="container ad-slot">Advertisement space · This area can later be used for AdSense once the site is approved.</div>
+
+<section class="container content-section">
+<div class="content-grid">
+<article class="info-card">
+<h2>How this calculator works</h2>
+<div class="formula">Revenue after fees = sale price − transaction fee − processing fee − fixed fee</div>
+<h2>Example</h2>
+<p>On a $32 sale with 6.5% transaction fee, 3% processing, and a $0.25 fixed fee, estimated fees are about $3.29 and revenue after fees is about $28.71.</p>
+<h2>Important assumptions</h2>
+<p>Results are planning estimates. Replace the default assumptions with your actual costs, rates, shipping arrangements, discounts, and sales volume. Marketplace and payment fees can change over time.</p>
+</article>
+<aside class="info-card">
+<h2>Related tools</h2>
+<ul><li><a class="text-link" href="etsy-pricing-calculator.html">Etsy Pricing Calculator →</a></li><li><a class="text-link" href="etsy-profit-calculator.html">Etsy Profit Calculator →</a></li><li><a class="text-link" href="handmade-pricing-calculator.html">Handmade Pricing Calculator →</a></li><li><a class="text-link" href="craft-fair-pricing-calculator.html">Craft Fair Pricing Calculator →</a></li></ul>
 <div class="faq">
-<h3>What does this calculator estimate?</h3><p>It uses the inputs you provide to estimate the selected pricing, fee, profit, margin, or break-even result. Change the assumptions to match your own business.</p>
-<h3>Are the results guaranteed?</h3><p>No. The calculator is an estimate. Your actual costs, platform rules, payment fees, shipping arrangements, taxes, returns, discounts, and sales volume can change the result.</p>
-<h3>Can I use this for a different marketplace?</h3><p>Yes, when the relevant rates and cost assumptions can be entered. The calculator does not claim to be an official marketplace calculator.</p>
-</div></aside></div></section></main>
+<h3>Can I use this for my own business?</h3>
+<p>Yes. Enter your own numbers to create a simple planning estimate. The calculators are designed for comparison and everyday decisions.</p>
+<h3>Are these official marketplace calculators?</h3>
+<p>No. They are independent planning tools and do not represent an official marketplace or payment provider.</p>
+</div>
+</aside>
+</div>
+</section>
+</main>
 <footer class="site-footer"><div class="container footer-wrap"><span>© 2026 Simple Tool Works</span><div><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div></div></footer>
 <script>
 function num(id){return Math.max(0,parseFloat(document.getElementById(id).value)||0)}
 function money(v){return '$'+Number(v).toFixed(2)}
 function pct(v){return Number(v).toFixed(1)+'%'}
-function setMain(v,unit){document.getElementById('mainOut').textContent=typeof v==='string'?v:(unit==='$'?money(v):String(v))}
-function setRows(rows){document.getElementById('rows').innerHTML=rows.map(r=>'<div class="result-row"><span>'+r[0]+'</span><strong>'+r[1]+'</strong></div>').join('')}
-function setNotice(t){document.getElementById('notice').innerHTML=t?'<div class="notice">'+t+'</div>':''}
-function calculate(){const gross=num('sale')+num('shippingCharged'); const tx=gross*num('transaction')/100, proc=gross*num('processing')/100, fixed=num('fixed')+num('other'); const fees=tx+proc+fixed, net=Math.max(0,gross-fees); setMain(fees,'$'); setRows([['Gross amount',money(gross)],['Transaction fee',money(tx)],['Payment processing',money(proc)],['Fixed + other fees',money(fixed)],['Revenue after fees',money(net)]]); setNotice('');}
-document.getElementById('calc').addEventListener('click',calculate); document.querySelectorAll('input').forEach(x=>x.addEventListener('input',calculate));
-document.getElementById('reset').addEventListener('click',()=>location.reload());
-document.getElementById('copy').addEventListener('click',async()=>{const text=document.querySelector('.result-card').innerText; try{await navigator.clipboard.writeText(text); alert('Results copied.')}catch(e){alert(text)}});
-calculate();
-</script></body></html>
+function renderMain(v){document.getElementById('mainOut').textContent=v}
+function renderMetrics(rows){document.getElementById('metrics').innerHTML=rows.map(function(r){return '<div class="metric"><span>'+r[0]+'</span><strong>'+r[1]+'</strong></div>'}).join('')}
+function note(t,type){var el=document.getElementById('notice');el.innerHTML=t?'<div class="result-note '+(type||'')+'">'+t+'</div>':''}
+function calculate(){function calculate(){
+const sale=num('sale'), tr=sale*num('transaction')/100, pr=sale*num('processing')/100, fixed=num('fixed');
+const fees=tr+pr+fixed, after=sale-fees;
+renderMain(money(after)); renderMetrics([['Transaction fee',money(tr)],['Processing fee',money(pr)],['Fixed fee',money(fixed)],['Total fees',money(fees)]]);
+note('Rates are editable assumptions. Check your marketplace and payment provider for the rates that apply to you.','');
+}}
+document.getElementById('calc').addEventListener('click',calculate)
+document.querySelectorAll('input').forEach(function(x){x.addEventListener('input',calculate)})
+document.getElementById('reset').addEventListener('click',function(){location.reload()})
+document.getElementById('copy').addEventListener('click',async function(){
+  var text=document.querySelector('.result-card').innerText;
+  try{await navigator.clipboard.writeText(text);this.textContent='Copied ✓';setTimeout(()=>this.textContent='Copy Results',1400)}
+  catch(e){alert(text)}
+})
+calculate()
+</script>
+</body></html>
