@@ -1,55 +1,57 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Profit Margin Calculator | Simple Tool Works</title>
-<meta name="description" content="Calculate profit, profit margin, markup, and total profit at a chosen quantity.">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="canonical" href="https://simpletoolworks.com/profit-margin-calculator.html">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Profit Margin Calculator | Simple Tool Works">
-<meta property="og:description" content="Calculate profit, profit margin, markup, and total profit at a chosen quantity.">
-<meta property="og:url" content="https://simpletoolworks.com/profit-margin-calculator.html">
-<meta property="og:image" content="https://simpletoolworks.com/images/dashboard.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://simpletoolworks.com/images/dashboard.png">
-<link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Profit Margin Calculator – Margin, Markup &amp; Profit | Simple Tool Works</title>
+<meta content="Calculate profit, profit margin, markup, and total profit from revenue, total cost, and quantity." name="description"/>
+<meta content="index,follow,max-image-preview:large" name="robots"/>
+<link href="https://simpletoolworks.com/profit-margin-calculator" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Profit Margin Calculator – Margin, Markup &amp; Profit | Simple Tool Works" property="og:title"/>
+<meta content="Calculate profit, profit margin, markup, and total profit from revenue, total cost, and quantity." property="og:description"/>
+<meta content="https://simpletoolworks.com/profit-margin-calculator" property="og:url"/>
+<meta content="https://simpletoolworks.com/images/dashboard.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://simpletoolworks.com/images/dashboard.png" name="twitter:image"/>
+<link href="styles.css" rel="stylesheet"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://simpletoolworks.com/"},{"@type":"ListItem","position":2,"name":"Free Tools","item":"https://simpletoolworks.com/demo"},{"@type":"ListItem","position":3,"name":"Profit Margin Calculator"}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3866329700145075"
+     crossorigin="anonymous"></script>
 </head>
 <body>
 <header class="site-header"><div class="container nav-wrap">
 <a class="brand" href="/"><span class="brand-mark">ST</span><span>Simple Tool Works</span></a>
-<nav class="nav"><a href="/">Home</a><a href="/demo.html">Free Tools</a><a href="/pro-excel.html">Pro Excel</a><a class="nav-cta" href="/pro-excel.html">Shop</a></nav>
+<nav class="nav"><a href="/">Home</a><a href="/demo">Free Tools</a><a href="/pro-excel">Pro Excel</a><a class="nav-cta" href="/pro-excel">Shop</a></nav>
 </div></header>
 <main class="calculator-page">
-<div class="container breadcrumb"><a href="/">Home</a> <span>/</span> <a href="/demo.html">Free Tools</a> <span>/</span> Profit Margin Calculator</div>
+<div class="container breadcrumb"><a href="/">Home</a> <span>/</span> <a href="/demo">Free Tools</a> <span>/</span> Profit Margin Calculator</div>
 <section class="tool-hero"><div class="container">
-<p class="eyebrow">PROFIT & BUSINESS · FREE ONLINE CALCULATOR</p>
+<p class="eyebrow">PROFIT &amp; BUSINESS · FREE ONLINE CALCULATOR</p>
 <h1>Profit Margin Calculator</h1>
-<p>Calculate profit, profit margin, markup, and total profit at a chosen quantity.</p>
+<p>Calculate profit margin and markup from revenue and cost, then see total profit at your chosen quantity.</p>
 </div></section>
-
 <section class="container calc-shell">
 <div class="calculator-card input-card">
 <div class="input-head"><div><h2>Enter your numbers</h2><p>Best for understanding the difference between margin and markup.</p></div><span class="live-badge">LIVE RESULTS</span></div>
 <div class="field-grid"><div class="field">
 <label for="revenue">Revenue</label>
-<div class="input-wrap"><input id="revenue" type="number" inputmode="decimal" min="0" step="0.01" value="5000"><span class="input-unit">$</span></div>
+<div class="input-wrap"><input id="revenue" inputmode="decimal" min="0" step="0.01" type="number" value="5000"/><span class="input-unit">$</span></div>
 <small>Total revenue.</small>
 </div>
 <div class="field">
 <label for="cost">Total cost</label>
-<div class="input-wrap"><input id="cost" type="number" inputmode="decimal" min="0" step="0.01" value="3250"><span class="input-unit">$</span></div>
+<div class="input-wrap"><input id="cost" inputmode="decimal" min="0" step="0.01" type="number" value="3250"/><span class="input-unit">$</span></div>
 <small>Total cost.</small>
 </div>
 <div class="field">
 <label for="quantity">Quantity</label>
-<div class="input-wrap"><input id="quantity" type="number" inputmode="decimal" min="0" step="0.01" value="1"><span class="input-unit">units</span></div>
+<div class="input-wrap"><input id="quantity" inputmode="decimal" min="0" step="0.01" type="number" value="1"/><span class="input-unit">units</span></div>
 <small>Optional unit count for total profit.</small>
 </div></div>
 <div class="calc-actions"><button class="primary" id="calc">Calculate</button><button class="secondary" id="reset">Reset</button></div>
 </div>
-
 <aside class="calculator-card result-card">
 <div class="result-top"><div><div class="result-kicker">Your result</div><div class="result-main"><span>Profit Margin</span><strong id="mainOut">—</strong></div><div class="result-sub">Updates automatically as you change the inputs.</div></div></div>
 <div class="result-grid" id="metrics"></div>
@@ -57,13 +59,11 @@
 <div class="result-actions"><button id="copy">Copy Results</button><button id="tryDemo" onclick="window.scrollTo({top:0,behavior:'smooth'})">Edit Inputs</button></div>
 </aside>
 </section>
-
 <div class="container ad-slot">Advertisement space · This area can later be used for AdSense once the site is approved.</div>
-
 <section class="container content-section">
 <div class="content-grid">
 <article class="info-card">
-<h2>How this calculator works</h2>
+<p>Quantity does not change the per-sale margin in this calculator. It lets you estimate the total profit that the same unit economics would generate at a chosen sales volume.</p><p>Markup uses a different base: cost. That is why a 50% markup does not produce a 50% margin. Use the calculator to see both numbers side by side instead of mixing the two formulas.</p><p>Profit is the money left after cost is subtracted from revenue. Profit margin expresses that profit as a percentage of revenue, which makes it useful for comparing products and sales situations.</p><h2>How to Calculate Profit Margin</h2><h2>Margin vs. markup at a glance</h2><ul><li>Margin = profit ÷ revenue</li><li>Markup = profit ÷ cost</li><li>Total profit = profit per calculation × quantity</li><li>A zero-revenue case cannot produce a meaningful percentage margin</li></ul><h2>How this calculator works</h2>
 <div class="formula">Profit = revenue − cost; profit margin = profit ÷ revenue × 100; markup = profit ÷ cost × 100</div>
 <h2>Example</h2>
 <p>With $5,000 revenue and $3,250 cost, profit is $1,750, profit margin is 35%, and markup is about 53.8%.</p>
@@ -72,8 +72,8 @@
 </article>
 <aside class="info-card">
 <h2>Related tools</h2>
-<ul><li><a class="text-link" href="/etsy-pricing-calculator.html">Etsy Pricing Calculator →</a></li><li><a class="text-link" href="/etsy-fee-calculator.html">Etsy Fee Calculator →</a></li><li><a class="text-link" href="/etsy-profit-calculator.html">Etsy Profit Calculator →</a></li><li><a class="text-link" href="/handmade-pricing-calculator.html">Handmade Pricing Calculator →</a></li></ul>
-<div class="faq">
+<ul><li><a class="text-link" href="/etsy-pricing-calculator">Etsy Pricing Calculator →</a></li><li><a class="text-link" href="/etsy-fee-calculator">Etsy Fee Calculator →</a></li><li><a class="text-link" href="/etsy-profit-calculator">Etsy Profit Calculator →</a></li><li><a class="text-link" href="/handmade-pricing-calculator">Handmade Pricing Calculator →</a></li></ul>
+<div class="faq"><h3>What is the formula for profit margin?</h3><p>Profit margin equals profit divided by revenue, multiplied by 100. First calculate profit as revenue minus cost.</p><h3>Why is my markup higher than my margin?</h3><p>Markup and margin use different denominators. Markup divides profit by cost, while margin divides profit by selling revenue, so markup is usually higher for a profitable sale.</p>
 <h3>Can I use this for my own business?</h3>
 <p>Yes. Enter your own numbers to create a simple planning estimate. The calculators are designed for comparison and everyday decisions.</p>
 <h3>Are these official marketplace calculators?</h3>
@@ -83,7 +83,7 @@
 </div>
 </section>
 </main>
-<footer class="site-footer"><div class="container footer-wrap"><span>© 2026 Simple Tool Works</span><div><a href="/about.html">About</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></div></div></footer>
+<footer class="site-footer"><div class="container footer-wrap"><span>© 2026 Simple Tool Works</span><div><a href="/about">About</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></div></footer>
 <script>
 function num(id){return Math.max(0,parseFloat(document.getElementById(id).value)||0)}
 function money(v){return '$'+Number(v).toFixed(2)}
@@ -91,11 +91,11 @@ function pct(v){return Number(v).toFixed(1)+'%'}
 function renderMain(v){document.getElementById('mainOut').textContent=v}
 function renderMetrics(rows){document.getElementById('metrics').innerHTML=rows.map(function(r){return '<div class="metric"><span>'+r[0]+'</span><strong>'+r[1]+'</strong></div>'}).join('')}
 function note(t,type){var el=document.getElementById('notice');el.innerHTML=t?'<div class="result-note '+(type||'')+'">'+t+'</div>':''}
-function calculate(){function calculate(){
+function calculate(){
 const revenue=num('revenue'), cost=num('cost'), q=Math.max(1,Math.round(num('quantity'))), profit=revenue-cost, margin=revenue?profit/revenue*100:null, markup=cost?profit/cost*100:null;
 renderMain(margin===null?'N/A':pct(margin)); renderMetrics([['Profit',money(profit)],['Markup',markup===null?'N/A':pct(markup)],['Total Profit at Quantity',money(profit*q)],['Revenue',money(revenue)]]);
 note(revenue===0?'Margin is N/A when revenue is zero.':cost===0?'Markup is N/A when cost is zero.':profit<0?'This produces a negative profit under the current inputs.':'','danger');
-}}
+}
 document.getElementById('calc').addEventListener('click',calculate)
 document.querySelectorAll('input').forEach(function(x){x.addEventListener('input',calculate)})
 document.getElementById('reset').addEventListener('click',function(){location.reload()})
