@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>How to Calculate Etsy Profit: A Simple Guide for Etsy Sellers | Simple Tool Works</title>
+
+  <meta name="description" content="Learn how to calculate Etsy profit after Etsy fees, materials, labor, packaging, shipping, advertising, and other costs. Use our free Etsy Profit Calculator.">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://simpletoolworks.com/guides/how-to-calculate-etsy-profit">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to Calculate Etsy Profit: A Simple Guide for Etsy Sellers">
+  <meta property="og:description" content="Learn how to calculate your real Etsy profit after marketplace fees and business costs.">
+  <meta property="og:url" content="https://simpletoolworks.com/guides/how-to-calculate-etsy-profit">
+  <meta property="og:site_name" content="Simple Tool Works">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to Calculate Etsy Profit">
+  <meta name="twitter:description" content="A practical guide to calculating Etsy profit after fees and product costs.">
+
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --card: #ffffff;
+      --text: #202124;
+      --muted: #666;
+      --border: #e5e7eb;
+      --primary: #635bff;
+      --primary-dark: #5048d8;
+      --soft: #f0efff;
+      --green: #188038;
+      --warning: #8a5a00;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .site-header {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px 70px;
+    }
+
+    .breadcrumbs {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .article-header {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 38px;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: 42px;
+      line-height: 1.2;
+      margin: 0 0 18px;
+      letter-spacing: -0.8px;
+    }
+
+    h2 {
+      font-size: 28px;
+      line-height: 1.3;
+      margin-top: 45px;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin-top: 28px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 0 0 17px;
+    }
+
+    .article-meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .intro {
+      font-size: 19px;
+      color: #444;
+    }
+
+    .article {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 38px;
+    }
+
+    .formula {
+      background: #f4f4f8;
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
+      padding: 20px;
+      margin: 25px 0;
+      font-weight: 700;
+      font-size: 17px;
+    }
+
+    .example {
+      background: #fafafa;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      margin: 22px 0;
+    }
+
+    .example-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .example-row:last-child {
+      border-bottom: none;
+      font-weight: 700;
+    }
+
+    .cta {
+      background: var(--soft);
+      border: 1px solid #ddd9ff;
+      border-radius: 14px;
+      padding: 28px;
+      margin: 35px 0;
+    }
+
+    .cta h3 {
+      margin-top: 0;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 13px 20px;
+      border-radius: 9px;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+
+    .button:hover {
+      background: var(--primary-dark);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .note {
+      background: #fff8e6;
+      border: 1px solid #f0d994;
+      border-radius: 10px;
+      padding: 18px;
+      margin: 22px 0;
+      color: #604800;
+    }
+
+    ul, ol {
+      padding-left: 25px;
+    }
+
+    li {
+      margin-bottom: 9px;
+    }
+
+    .toc {
+      background: #fafafa;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px 25px;
+      margin: 25px 0;
+    }
+
+    .toc strong {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--border);
+      padding: 20px 0;
+    }
+
+    .faq-item:first-child {
+      border-top: none;
+    }
+
+    .faq-item h3 {
+      margin-top: 0;
+    }
+
+    .sources {
+      background: #fafafa;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    .footer {
+      background: #fff;
+      border-top: 1px solid var(--border);
+      padding: 30px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-links {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      margin: 0 8px;
+    }
+
+    @media (max-width: 700px) {
+      .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        gap: 12px;
+      }
+
+      .container {
+        padding: 25px 14px 50px;
+      }
+
+      .article-header,
+      .article {
+        padding: 24px 20px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+
+      .intro {
+        font-size: 17px;
+      }
+
+      .example-row {
+        flex-direction: column;
+        gap: 2px;
+      }
+    }
+  </style>
+
+  <!-- Article Schema -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Calculate Etsy Profit: A Simple Guide for Etsy Sellers",
+    "description": "Learn how to calculate Etsy profit after Etsy fees, materials, labor, packaging, shipping, advertising, and other business costs.",
+    "author": {
+      "@type": "Organization",
+      "name": "Simple Tool Works",
+      "url": "https://simpletoolworks.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Simple Tool Works",
+      "url": "https://simpletoolworks.com/"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://simpletoolworks.com/guides/how-to-calculate-etsy-profit"
+    },
+    "datePublished": "2026-10-07",
+    "dateModified": "2026-10-07"
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I calculate Etsy profit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Etsy profit can be estimated by taking your total revenue and subtracting Etsy fees, product costs, labor, packaging, shipping, advertising costs, and other business expenses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What Etsy fees should I include when calculating profit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Common Etsy selling costs include listing fees, transaction fees, payment processing fees, and potentially advertising, currency conversion, regulatory operating, shipping label, or other applicable fees."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Etsy revenue the same as Etsy profit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Revenue is the amount generated by sales, while profit is what remains after applicable Etsy fees and business costs are deducted."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a good Etsy profit margin?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no single ideal Etsy profit margin for every seller. The appropriate margin depends on product type, labor, materials, shipping, advertising, returns, and other operating costs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I calculate Etsy profit before listing a product?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Estimating Etsy fees and product costs before publishing a listing can help you choose a profitable selling price."
+        }
+      }
+    ]
+  }
+  </script>
+
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="https://simpletoolworks.com/">Simple Tool Works</a>
+
+```
+<nav class="nav">
+  <a href="https://simpletoolworks.com/">Home</a>
+  <a href="https://simpletoolworks.com/etsy-profit-calculator">Etsy Profit Calculator</a>
+  <a href="https://simpletoolworks.com/etsy-pricing-calculator">Etsy Pricing Calculator</a>
+</nav>
+```
+
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="breadcrumbs">
+    <a href="https://simpletoolworks.com/">Home</a>
+    &nbsp;›&nbsp;
+    <span>Guides</span>
+    &nbsp;›&nbsp;
+    <span>How to Calculate Etsy Profit</span>
+  </div>
+
+  <header class="article-header">
+    <h1>How to Calculate Etsy Profit</h1>
+
+```
+<p class="intro">
+  Selling a product for $30 on Etsy does not mean you made $30.
+  To understand whether a product is actually profitable, you need to account for Etsy fees, product costs, labor, shipping, packaging, advertising, and other expenses.
+</p>
+
+<div class="article-meta">
+  Updated October 7, 2026 · Simple Tool Works
+</div>
+```
+
+  </header>
+
+  <article class="article">
+
+```
+<div class="toc">
+  <strong>In this guide:</strong>
+  <ol>
+    <li><a href="#what-is-etsy-profit">What is Etsy profit?</a></li>
+    <li><a href="#formula">The Etsy profit formula</a></li>
+    <li><a href="#etsy-fees">Etsy fees to include</a></li>
+    <li><a href="#product-costs">Product and fulfillment costs</a></li>
+    <li><a href="#example">Etsy profit calculation example</a></li>
+    <li><a href="#steps">How to calculate Etsy profit step by step</a></li>
+    <li><a href="#margin">Understanding Etsy profit margin</a></li>
+    <li><a href="#increase-profit">How to increase Etsy profit</a></li>
+    <li><a href="#calculator">Use the free Etsy Profit Calculator</a></li>
+    <li><a href="#faq">Frequently asked questions</a></li>
+  </ol>
+</div>
+
+<section id="what-is-etsy-profit">
+  <h2>What Is Etsy Profit?</h2>
+
+  <p>
+    Etsy profit is the amount of money left after you subtract the costs of making, selling, and fulfilling an order from the revenue generated by that order.
+  </p>
+
+  <p>
+    This is different from revenue. Revenue tells you how much money your products generated. Profit tells you how much you actually kept after expenses.
+  </p>
+
+  <p>
+    For example, suppose you sell a handmade product for $35. After Etsy fees, materials, labor, packaging, shipping, and other costs, your actual profit could be much lower than $35.
+  </p>
+
+  <p>
+    That is why Etsy sellers should calculate profit before deciding whether a product is worth selling.
+  </p>
+</section>
+
+<section id="formula">
+  <h2>The Etsy Profit Formula</h2>
+
+  <p>
+    A simple way to calculate Etsy profit is:
+  </p>
+
+  <div class="formula">
+    Etsy Profit = Total Revenue − Etsy Fees − Product Costs − Fulfillment Costs − Other Costs
+  </div>
+
+  <p>
+    Your exact calculation may vary depending on your business model and the fees that apply to your Etsy shop.
+  </p>
+
+  <p>
+    For a more detailed calculation, you can separate your costs into several categories:
+  </p>
+
+  <ul>
+    <li>Product materials</li>
+    <li>Labor</li>
+    <li>Packaging</li>
+    <li>Shipping</li>
+    <li>Etsy listing fees</li>
+    <li>Etsy transaction fees</li>
+    <li>Payment processing fees</li>
+    <li>Advertising costs</li>
+    <li>Currency conversion costs</li>
+    <li>Refund and return reserves</li>
+    <li>Other operating expenses</li>
+  </ul>
+</section>
+
+<section id="etsy-fees">
+  <h2>What Etsy Fees Should You Include?</h2>
+
+  <p>
+    Etsy has several types of seller fees. The exact fees that apply to your shop can depend on your location, payment setup, advertising activity, and other factors.
+  </p>
+
+  <p>
+    Etsy currently identifies listing fees, transaction fees, and payment processing fees as common selling fees. Additional costs can apply for services such as advertising, shipping labels, currency conversion, and certain regulatory fees.
+  </p>
+
+  <h3>1. Listing Fees</h3>
+
+  <p>
+    Etsy charges a listing fee when you publish a listing. Etsy currently states that the standard listing fee is $0.20 USD per listing. Listings generally remain active for four months or until they sell, subject to Etsy's listing rules.
+  </p>
+
+  <p>
+    If you sell multiple quantities from a listing, additional listing-related charges can apply to additional quantities or renewals.
+  </p>
+
+  <h3>2. Transaction Fees</h3>
+
+  <p>
+    Etsy currently charges a 6.5% transaction fee on the total order amount in the designated listing currency. Etsy states that this can include the item price, shipping, and gift wrapping when those charges apply.
+  </p>
+
+  <h3>3. Payment Processing Fees</h3>
+
+  <p>
+    Payment processing fees are separate from Etsy's transaction fee. They consist of a percentage plus a fixed amount, and the applicable rate depends on the country associated with the seller's bank account.
+  </p>
+
+  <h3>4. Offsite Ads</h3>
+
+  <p>
+    If an order is attributed to Etsy Offsite Ads, an additional advertising fee may apply. Etsy currently states that the rate can be 15% or 12% depending on the seller's sales level, with a per-order maximum of $100.
+  </p>
+
+  <h3>5. Other Possible Costs</h3>
+
+  <p>
+    Depending on your business and location, you may also need to consider currency conversion, regulatory operating fees, shipping labels, taxes on certain seller services, or other applicable charges.
+  </p>
+
+  <div class="note">
+    <strong>Important:</strong>
+    Etsy fees can change and may vary by seller location. Always check Etsy's current fee information for your market when setting your pricing.
+  </div>
+</section>
+
+<section id="product-costs">
+  <h2>Don't Forget Your Product Costs</h2>
+
+  <p>
+    Etsy fees are only one part of your cost structure. A product can have healthy-looking sales but still produce little profit if its production costs are too high.
+  </p>
+
+  <h3>Materials</h3>
+
+  <p>
+    Include the actual cost of materials used to make one product. If you buy materials in bulk, calculate the approximate cost used per finished item.
+  </p>
+
+  <h3>Labor</h3>
+
+  <p>
+    Labor is often overlooked by handmade sellers. Even if you make the product yourself, your time has economic value.
+  </p>
+
+  <p>
+    For example, if a product takes 45 minutes to make, you can estimate your hourly target rate and assign a labor cost to that product.
+  </p>
+
+  <h3>Packaging</h3>
+
+  <p>
+    Include boxes, envelopes, labels, tissue paper, stickers, inserts, protective materials, and other packaging expenses.
+  </p>
+
+  <h3>Shipping</h3>
+
+  <p>
+    If you offer free shipping, shipping is still a real business expense. If you charge customers for shipping, remember that marketplace fees may apply to the shipping amount as well. Etsy states that its transaction fee applies to shipping charges when you charge buyers for shipping.
+  </p>
+
+  <h3>Other Costs</h3>
+
+  <p>
+    Depending on your business, other costs may include advertising, software, photography, design, refunds, damaged products, payment-related expenses, and other operating costs.
+  </p>
+</section>
+
+<section id="example">
+  <h2>Etsy Profit Calculation Example</h2>
+
+  <p>
+    Let's look at a simplified example.
+  </p>
+
+  <div class="example">
+
+    <div class="example-row">
+      <span>Selling price</span>
+      <strong>$35.00</strong>
+    </div>
+
+    <div class="example-row">
+      <span>Materials</span>
+      <strong>$8.00</strong>
+    </div>
+
+    <div class="example-row">
+      <span>Labor</span>
+      <strong>$5.00</strong>
+    </div>
+
+    <div class="example-row">
+      <span>Packaging</span>
+      <strong>$1.50</strong>
+    </div>
+
+    <div class="example-row">
+      <span>Shipping cost</span>
+      <strong>$4.00</strong>
+    </div>
+
+    <div class="example-row">
+      <span>Other costs</span>
+      <strong>$1.00</strong>
+    </div>
+
+  </div>
+
+  <p>
+    Before Etsy fees, the product-related costs in this example are:
+  </p>
+
+  <div class="formula">
+    $8 + $5 + $1.50 + $4 + $1 = $19.50
+  </div>
+
+  <p>
+    The seller therefore has $15.50 remaining before Etsy fees and any other applicable costs.
+  </p>
+
+  <p>
+    This demonstrates why looking only at the selling price can give a misleading impression of profitability.
+  </p>
+
+  <p>
+    For an actual estimate using your own selling price, costs, shipping, country, and fee assumptions, use our:
+  </p>
+
+  <div class="cta">
+    <h3>Free Etsy Profit Calculator</h3>
+
+    <p>
+      Enter your product price and costs to estimate Etsy fees, net profit, profit margin, ROI, and break-even pricing.
+    </p>
+
+    <a class="button" href="https://simpletoolworks.com/etsy-profit-calculator">
+      Calculate Your Etsy Profit →
+    </a>
+  </div>
+</section>
+
+<section id="steps">
+  <h2>How to Calculate Etsy Profit Step by Step</h2>
+
+  <h3>Step 1: Enter Your Selling Price</h3>
+
+  <p>
+    Start with the price the customer pays for your product.
+  </p>
+
+  <p>
+    If you offer discounts, coupons, or sales, consider calculating profit using the actual amount you expect to receive rather than your full advertised price.
+  </p>
+
+  <h3>Step 2: Add Shipping Revenue</h3>
+
+  <p>
+    If customers pay for shipping separately, include the shipping amount when calculating the total order revenue and applicable Etsy fees.
+  </p>
+
+  <h3>Step 3: Estimate Etsy Fees</h3>
+
+  <p>
+    Account for applicable listing, transaction, payment processing, advertising, currency conversion, and other fees.
+  </p>
+
+  <h3>Step 4: Calculate Product Costs</h3>
+
+  <p>
+    Add materials, components, ingredients, blanks, or other direct product costs.
+  </p>
+
+  <h3>Step 5: Add Labor</h3>
+
+  <p>
+    Estimate how much labor is required to produce one order. This is especially important for handmade products.
+  </p>
+
+  <h3>Step 6: Add Packaging and Shipping</h3>
+
+  <p>
+    Include packaging and the actual cost of fulfilling the order.
+  </p>
+
+  <h3>Step 7: Calculate Net Profit</h3>
+
+  <p>
+    Subtract all relevant costs from the revenue generated by the order.
+  </p>
+
+  <div class="formula">
+    Net Profit = Revenue − All Applicable Costs
+  </div>
+
+  <h3>Step 8: Calculate Profit Margin</h3>
+
+  <p>
+    Once you know your profit, calculate your margin:
+  </p>
+
+  <div class="formula">
+    Profit Margin = Net Profit ÷ Revenue × 100
+  </div>
+
+  <p>
+    Profit margin helps you compare different products even when their selling prices are different.
+  </p>
+</section>
+
+<section id="margin">
+  <h2>Understanding Etsy Profit Margin</h2>
+
+  <p>
+    Profit margin tells you what percentage of your revenue remains as profit after your costs.
+  </p>
+
+  <p>
+    For example, if your shop generates $100 in revenue and you keep $30 after applicable costs:
+  </p>
+
+  <div class="formula">
+    $30 ÷ $100 × 100 = 30% Profit Margin
+  </div>
+
+  <p>
+    There is no single profit margin that is automatically right for every Etsy seller.
+  </p>
+
+  <p>
+    A handmade product requiring several hours of labor may need a different margin than a digital product, print-on-demand product, or simple craft supply.
+  </p>
+
+  <p>
+    The important thing is to understand your own costs and make sure your pricing supports the business you are trying to build.
+  </p>
+</section>
+
+<section id="increase-profit">
+  <h2>How to Increase Etsy Profit</h2>
+
+  <h3>1. Improve Your Pricing</h3>
+
+  <p>
+    If your products are consistently selling but producing very little profit, your price may be too low.
+  </p>
+
+  <p>
+    Before lowering prices to compete, calculate your actual cost structure.
+  </p>
+
+  <h3>2. Increase Average Order Value</h3>
+
+  <p>
+    Bundles, sets, variations, and complementary products can increase the amount a customer spends per order.
+  </p>
+
+  <h3>3. Reduce Material Waste</h3>
+
+  <p>
+    Small amounts of unused material can become significant costs when you sell hundreds of products.
+  </p>
+
+  <h3>4. Track Labor</h3>
+
+  <p>
+    If you do not track your production time, you may accidentally create products that generate revenue but do not pay you fairly for your time.
+  </p>
+
+  <h3>5. Review Advertising Costs</h3>
+
+  <p>
+    Advertising can generate sales, but those sales should be evaluated based on the profit remaining after advertising-related costs.
+  </p>
+
+  <h3>6. Identify Low-Margin Products</h3>
+
+  <p>
+    Not every product in your shop needs to have the same margin. But you should know which products generate strong profit and which products consume time without producing enough return.
+  </p>
+
+  <h3>7. Review Your Numbers Regularly</h3>
+
+  <p>
+    Product costs, shipping rates, marketplace fees, and advertising expenses can change. Reviewing your pricing and profit calculations regularly helps prevent outdated pricing from slowly reducing your margins.
+  </p>
+</section>
+
+<section id="calculator">
+  <h2>Use the Free Etsy Profit Calculator</h2>
+
+  <p>
+    You do not have to calculate every Etsy fee manually.
+  </p>
+
+  <p>
+    Our free Etsy Profit Calculator lets you enter your selling price, shipping, materials, labor, packaging, shipping cost, other costs, fee assumptions, and target margin.
+  </p>
+
+  <p>
+    The calculator can then estimate your revenue, Etsy fees, product costs, net profit, profit margin, ROI, and break-even price.
+  </p>
+
+  <div class="cta">
+    <h3>Calculate Your Etsy Profit for Free</h3>
+
+    <p>
+      Test your own product numbers before publishing or repricing your Etsy listing.
+    </p>
+
+    <a class="button" href="https://simpletoolworks.com/etsy-profit-calculator">
+      Open Etsy Profit Calculator →
+    </a>
+  </div>
+
+  <h2>Want a More Detailed Etsy Profit System?</h2>
+
+  <p>
+    If you sell multiple products, manually calculating every product can become difficult.
+  </p>
+
+  <p>
+    A spreadsheet-based system can help you keep product information, costs, pricing assumptions, and profitability calculations in one place.
+  </p>
+
+  <div class="cta">
+    <h3>Etsy Seller Profit Calculator PRO</h3>
+
+    <p>
+      For sellers who want a more detailed spreadsheet workflow, our PRO Excel calculator is designed for product-level profitability analysis, pricing planning, fee assumptions, and scenario comparison.
+    </p>
+
+    <ul>
+      <li>Product-level profit calculations</li>
+      <li>Etsy fee assumptions</li>
+      <li>Pricing planning</li>
+      <li>Profit margin analysis</li>
+      <li>Scenario comparison</li>
+      <li>Editable spreadsheet structure</li>
+      <li>Dashboard-style overview</li>
+    </ul>
+
+    <a
+      class="button"
+      href="https://payhip.com/SheetCraft588"
+      target="_blank"
+      rel="noopener noreferrer">
+      Get the PRO Excel Calculator →
+    </a>
+  </div>
+</section>
+
+<section id="faq">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-item">
+    <h3>How do I calculate Etsy profit?</h3>
+
+    <p>
+      Start with your total revenue and subtract Etsy fees, product costs, labor, packaging, shipping, advertising, and other applicable business costs. The amount remaining is your estimated profit.
+    </p>
+  </div>
+
+  <div class="faq-item">
+    <h3>What Etsy fees should I include when calculating profit?</h3>
+
+    <p>
+      Common costs include listing fees, transaction fees, and payment processing fees. Depending on your situation, you may also need to consider Offsite Ads, Etsy Ads, currency conversion, shipping labels, regulatory operating fees, taxes on certain services, and other applicable charges.
+    </p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Is Etsy revenue the same as Etsy profit?</h3>
+
+    <p>
+      No. Revenue is the money generated by sales. Profit is what remains after the applicable costs of selling and fulfilling those sales are deducted.
+    </p>
+  </div>
+
+  <div class="faq-item">
+    <h3>What is a good Etsy profit margin?</h3>
+
+    <p>
+      There is no universal ideal margin. Your target should depend on the product, labor involved, material costs, shipping, advertising, returns, and other operating expenses.
+    </p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Can I calculate Etsy profit before listing a product?</h3>
+
+    <p>
+      Yes. In fact, calculating expected profit before publishing a listing can help you choose a more sustainable price.
+    </p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Does Etsy charge fees on shipping?</h3>
+
+    <p>
+      Some Etsy fees apply to the order amount including shipping. For example, Etsy states that its transaction fee applies to shipping charges when shipping is charged to the buyer. Payment processing fees can also include shipping amounts.
+    </p>
+  </div>
+
+  <div class="faq-item">
+    <h3>Do Etsy fees vary by country?</h3>
+
+    <p>
+      Yes. Payment processing rates vary according to the location of the seller's bank account, and additional fees may depend on the seller's location and circumstances.
+    </p>
+  </div>
+
+  <div class="faq-item">
+    <h3>How can I calculate my Etsy profit quickly?</h3>
+
+    <p>
+      You can use the <a href="https://simpletoolworks.com/etsy-profit-calculator">free Etsy Profit Calculator</a> to estimate your profit without building the calculations manually.
+    </p>
+  </div>
+</section>
+
+<div class="sources">
+  <strong>Official Etsy references</strong>
+
+  <p>
+    The fee information in this guide is based on Etsy's official seller help documentation. Etsy's fees and policies can change, so sellers should verify the current fees that apply to their shop.
+  </p>
+
+  <ul>
+    <li>
+      <a href="https://help.etsy.com/hc/en-us/articles/115014483627-What-are-the-Fees-and-Taxes-for-Selling-on-Etsy" target="_blank" rel="noopener noreferrer">
+        Etsy — Fees and Taxes for Selling
+      </a>
+    </li>
+
+    <li>
+      <a href="https://help.etsy.com/hc/en-us/articles/115015628847-What-are-Payment-Processing-Fees-for-Selling-on-Etsy" target="_blank" rel="noopener noreferrer">
+        Etsy — Payment Processing Fees
+      </a>
+    </li>
+
+    <li>
+      <a href="https://help.etsy.com/hc/en-us/articles/360035902374-Etsy-Fee-Basics" target="_blank" rel="noopener noreferrer">
+        Etsy — Fee Basics
+      </a>
+    </li>
+  </ul>
+</div>
+```
+
+  </article>
+
+</main>
+
+<footer class="footer">
+
+  <div class="footer-links">
+    <a href="https://simpletoolworks.com/">Home</a>
+    <a href="https://simpletoolworks.com/about.html">About</a>
+    <a href="https://simpletoolworks.com/contact.html">Contact</a>
+    <a href="https://simpletoolworks.com/privacy.html">Privacy</a>
+    <a href="https://simpletoolworks.com/terms.html">Terms</a>
+  </div>
+
+  <div>
+    © 2026 Simple Tool Works
+  </div>
+
+</footer>
+
+</body>
+</html>
