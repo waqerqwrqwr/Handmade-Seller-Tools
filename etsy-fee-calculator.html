@@ -64,27 +64,85 @@
 <div class="result-actions"><button id="copy">Copy Results</button><button id="tryDemo" onclick="window.scrollTo({top:0,behavior:'smooth'})">Edit Inputs</button></div>
 </aside>
 </section>
-<div class="container ad-slot">Advertisement space · This area can later be used for AdSense once the site is approved.</div>
-<section class="container content-section">
+<div class="container"><div class="viz"><div class="viz-head">Where a $32 Etsy sale goes</div><div class="viz-bar"><span style="flex:28.71;background:#16845b"></span><span style="flex:3.29;background:#c83c3c"></span></div><div class="viz-legend"><span><i style="background:#16845b"></i>You keep $28.71</span><span><i style="background:#c83c3c"></i>Etsy fees $3.29</span></div></div></div><section class="container content-section">
 <div class="content-grid">
 <article class="info-card">
-<p>Use the result to see the amount left after the modeled selling fees. For a full profitability check, combine this result with product costs, labor, packaging, and shipping.</p><p>Keep the rates editable rather than treating the defaults as official Etsy rates. Your actual fees can depend on your marketplace, payment setup, listing situation, and other account-specific factors.</p><p>Enter the sale price you want to evaluate. The calculator then applies the percentage assumptions to that amount and adds the fixed fee.</p><h2>How to Estimate Etsy Seller Fees</h2><h2>What this Etsy fee calculator does not include</h2><ul><li>Product or material costs</li><li>Labor and packaging costs</li><li>Seller-paid shipping</li><li>Taxes or other costs not entered into the calculator</li></ul><h2>How this calculator works</h2>
-<div class="formula">Revenue after fees = sale price − transaction fee − processing fee − fixed fee</div>
-<h2>Example</h2>
-<p>On a $32 sale with 6.5% transaction fee, 3% processing, and a $0.25 fixed fee, estimated fees are about $3.29 and revenue after fees is about $28.71.</p>
+<p>Etsy does not take a single fee — it takes several, and they do not all behave the same way. This calculator adds up the charges that scale with your sale price: a transaction fee, a payment processing fee, and a fixed per-order fee. Enter your own numbers to see what is actually left before you price an item or run a promotion.</p>
+
+<h2>How Etsy fees stack up</h2>
+<p>A typical US sale can carry several separate charges:</p>
+<ul>
+<li><strong>Listing fee</strong> — charged when you publish or renew a listing (commonly $0.20), and again each time it renews.</li>
+<li><strong>Transaction fee</strong> — a percentage of the whole order: the item price, the shipping you charge, and gift wrap.</li>
+<li><strong>Payment processing fee</strong> — a percentage plus a small fixed amount for handling the payment.</li>
+<li><strong>Offsite ads fee</strong> — applied only to orders that came from an Etsy offsite ad.</li>
+<li><strong>Currency conversion fee</strong> — if the buyer pays in a different currency from your payout.</li>
+</ul>
+<p>Most of these are percentages of the sale, so fees grow faster than people expect as the price rises. On a high-priced item, a few percentage points can account for more than the material cost.</p>
+
+<h2>What this calculator includes — and what it leaves out</h2>
+<p>The calculator models three inputs you control: a transaction fee, a payment processing fee, and a fixed fee. That covers the largest percentage-based charges, but a full profit picture needs more:</p>
+<ul>
+<li>Listing fees and listing renewals</li>
+<li>Offsite ads fees</li>
+<li>Product and material costs</li>
+<li>Labor and packaging</li>
+<li>Seller-paid shipping and returns</li>
+<li>Taxes and country-specific operating fees</li>
+</ul>
+<p>Use the result as the fee line of your pricing, then subtract the rest.</p>
+
+<h2>How this calculator works</h2>
+<div class="formula">Revenue after fees = sale price &minus; transaction fee &minus; payment processing fee &minus; fixed fee</div>
+<p>Each percentage is applied to the sale price, and the fixed fee is added once per order. Because the result updates as you type, you can test several price points without reloading the page.</p>
+
+<h2>Worked examples</h2>
+<p>Using the default assumptions — 6.5% transaction, 3% processing, $0.25 fixed:</p>
+<ul>
+<li>a <strong>$10</strong> sale → about <strong>$1.20</strong> in fees, about <strong>$8.80</strong> kept</li>
+<li>a <strong>$32</strong> sale → about <strong>$3.29</strong> in fees, about <strong>$28.71</strong> kept</li>
+<li>a <strong>$75</strong> sale → about <strong>$7.38</strong> in fees, about <strong>$67.63</strong> kept</li>
+<li>a <strong>$150</strong> sale → about <strong>$14.50</strong> in fees, about <strong>$135.50</strong> kept</li>
+</ul>
+<p>These figures ignore listing fees, offsite ads, and your own production costs. They show how fees scale, not what you ultimately earn.</p>
+
+<h2>Common mistakes when estimating Etsy fees</h2>
+<ul>
+<li><strong>Treating the defaults as official rates.</strong> Etsy's rates vary by country and change over time, so check your own fee page before relying on any number.</li>
+<li><strong>Forgetting the listing fee.</strong> At $0.20 it looks trivial, but it adds up across hundreds of listings and renewals.</li>
+<li><strong>Ignoring offsite ads.</strong> On an offsite-ad order, that fee can be the single largest charge.</li>
+<li><strong>Counting fees but not costs.</strong> A sale that keeps $28.71 can still lose money once materials and labor are paid.</li>
+<li><strong>Applying the percentage to the item only.</strong> It usually applies to the whole order, including the shipping you charge.</li>
+</ul>
+
+<h2>How to use the result</h2>
+<ul>
+<li>Compare revenue after fees with your total cost to find real profit.</li>
+<li>Test a few price points to see where fees start to bite.</li>
+<li>Check a discount or promotion before you run it.</li>
+</ul>
+
 <h2>Important assumptions</h2>
-<p>Results are planning estimates. Replace the default assumptions with your actual costs, rates, shipping arrangements, discounts, and sales volume. Marketplace and payment fees can change over time.</p>
+<p>Results are planning estimates, not official Etsy statements. Replace the defaults with the rates that apply to your shop, country, and payment setup. Marketplace and payment fees change over time, so revisit your numbers whenever you change price, shipping, or promotions.</p>
 </article>
 <aside class="info-card">
 <h2>Related tools</h2>
 <ul><li><a class="text-link" href="/etsy-pricing-calculator">Etsy Pricing Calculator →</a></li><li><a class="text-link" href="/etsy-profit-calculator">Etsy Profit Calculator →</a></li><li><a class="text-link" href="/handmade-pricing-calculator">Handmade Pricing Calculator →</a></li><li><a class="text-link" href="/craft-fair-pricing-calculator">Craft Fair Pricing Calculator →</a></li></ul>
-<div class="faq"><h3>How much does Etsy take from a sale?</h3><p>The amount depends on the fee rates that apply to your shop and transaction. Enter the rates you want to model instead of assuming one universal total.</p><h3>Can I use this for an Etsy pricing decision?</h3><p>Yes. Use the fee estimate as one input in a pricing decision, then check it against your actual seller account and the other costs of fulfilling the order.</p>
-<h3>Can I use this for my own business?</h3>
-<p>Yes. Enter your own numbers to create a simple planning estimate. The calculators are designed for comparison and everyday decisions.</p>
+<div class="faq">
+<h3>How much does Etsy take from a sale?</h3>
+<p>It varies. Etsy charges several separate fees, and the total depends on the rates that apply to your shop, country, and payment setup. Enter those rates here rather than assuming one universal percentage.</p>
+<h3>Is the 6.5% transaction fee the real Etsy rate?</h3>
+<p>It is a common US figure used as a starting point, not a guaranteed rate. Treat every default on this page as an editable assumption, and confirm the current rate on Etsy's own fee page.</p>
+<h3>Does Etsy charge fees on shipping?</h3>
+<p>Transaction fees are usually calculated on the whole order, which can include the shipping you charge and gift wrap. If you ship for free, that cost still comes out of your margin.</p>
+<h3>Does this include the offsite ads fee?</h3>
+<p>No. Offsite ads are charged only on orders that came from an offsite ad, so they are left out of the estimate. If you get many offsite-ad orders, model that fee separately.</p>
+<h3>Can I use this calculator for a pricing decision?</h3>
+<p>Yes. Use the fee estimate as one input, then check it against your actual seller account and the other costs of fulfilling the order.</p>
 <h3>Are these official marketplace calculators?</h3>
 <p>No. They are independent planning tools and do not represent an official marketplace or payment provider.</p>
 </div>
-</aside>
+<div class="pro-cta"><span class="pill">PRO</span><h3>Handmade Product Pricing Calculator PRO</h3><p>An Excel workbook that goes further than this page: batch pricing, editable fee tables, and profit tracking across your whole catalogue.</p><a class="btn btn-primary" href="/pro-excel">See the workbook</a></div></aside>
 </div>
 </section>
 </main>

@@ -74,27 +74,74 @@
 <div class="result-actions"><button id="copy">Copy Results</button><button id="tryDemo" onclick="window.scrollTo({top:0,behavior:'smooth'})">Edit Inputs</button></div>
 </aside>
 </section>
-<div class="container ad-slot">Advertisement space · This area can later be used for AdSense once the site is approved.</div>
-<section class="container content-section">
+<div class="container"><div class="viz"><div class="viz-head">Where a $20.00 wholesale unit goes</div><div class="viz-bar"><span style="flex:17;background:#8b93a7"></span><span style="flex:3;background:#16845b"></span></div><div class="viz-legend"><span><i style="background:#8b93a7"></i>Unit cost $17.00</span><span><i style="background:#16845b"></i>Profit $3.00</span></div></div></div><section class="container content-section">
 <div class="content-grid">
 <article class="info-card">
-<p>Use quantity to estimate the total profit on the order. For larger wholesale requests, compare the result with your production capacity, payment terms, and minimum order size.</p><p>Enter your unit cost before packaging and seller-paid shipping, then add those costs separately. This keeps the calculation transparent and makes it easier to see which part of the order is reducing your margin.</p><p>A simple starting point is to apply a wholesale discount to the normal retail price, then check whether the resulting wholesale price still covers every cost you expect to absorb.</p><h2>How to Set a Wholesale Price</h2><h2>Wholesale pricing checks</h2><ul><li>Retail price and wholesale discount</li><li>Unit production or sourcing cost</li><li>Packaging and seller-paid shipping</li><li>Order quantity and resulting total profit</li></ul><h2>How this calculator works</h2>
-<div class="formula">Wholesale price = retail price × (1 − wholesale discount); profit = wholesale price − unit cost − packaging − seller-paid shipping</div>
-<h2>Example</h2>
-<p>At a $40 retail price with a 50% wholesale discount, $16 unit cost, $1 packaging, and no seller-paid shipping, wholesale price is $20, profit is $3/unit, and margin is 15%.</p>
+<p>Wholesale pricing is not just retail pricing with a smaller number. When you sell to a shop, gallery, or distributor, that buyer has to mark the item up again and still make money, so the price you offer has to leave them enough room. At the same time, it has to clear your own cost floor. This calculator tests both at once: you set a retail price, a wholesale discount, your unit cost, packaging, any shipping you absorb, and the order quantity, and it shows the wholesale price, the profit per unit, the margin, and the total profit on the order.</p>
+
+<h2>Why wholesale prices sit near half of retail</h2>
+<p>Most retail buyers work to a rule of thumb called keystone pricing: they buy at one price and resell at roughly double. A $40 retail item is therefore expected to wholesale for about $20. That is the origin of the familiar 50% wholesale discount, and it is why a supplier who refuses to move much below retail rarely gets a second order from a shop.</p>
+<p>The discount is not a rule, though &mdash; it is a starting point for negotiation. Some categories support 40%, some distributors demand 60% or more, and a few buyers will accept a higher price if your product turns over quickly. What matters is that whatever wholesale price you agree to still clears the costs on this page before you shake hands.</p>
+
+<h2>A wholesale price has two floors to clear</h2>
+<p>Price a wholesale order against two separate thresholds, not one:</p>
+<ul>
+<li><strong>The buyer&rsquo;s markup floor.</strong> The buyer needs a workable spread between your wholesale price and their retail price. If $20 wholesale becomes $21 retail, no shop will stock it.</li>
+<li><strong>Your cost floor.</strong> The wholesale price must cover unit cost, wholesale packaging, and any shipping you pay, with something left over. A price that only covers costs is not a wholesale price; it is a favour.</li>
+</ul>
+<p>The two floors meet in the middle. Your job is to find a wholesale price that sits above your cost floor and below the buyer&rsquo;s ceiling &mdash; and, ideally, not by a sliver at either end.</p>
+
+<h2>How this calculator works</h2>
+<div class="formula">Wholesale price = retail price &times; (1 &minus; wholesale discount) &nbsp;&middot;&nbsp; profit per unit = wholesale price &minus; unit cost &minus; packaging &minus; seller-paid shipping &nbsp;&middot;&nbsp; order profit = profit per unit &times; quantity</div>
+<p>The discount is applied to your retail price, not to your cost, so the wholesale price moves in step with the retail price. Packaging and seller-paid shipping are treated as per-unit costs, and quantity only scales the order-level figure. The margin is profit per unit divided by the wholesale price, so it always describes the wholesale sale rather than the retail one.</p>
+
+<h2>Worked examples</h2>
+<p>Using the default assumptions &mdash; $40 retail, 50% wholesale discount, $16 unit cost, $1 packaging, no seller-paid shipping:</p>
+<ul>
+<li><strong>$40 retail, 50% off</strong> &rarr; wholesale <strong>$20.00</strong>; unit cost $17.00; profit <strong>$3.00</strong>/unit; margin <strong>15.0%</strong>; a 10-unit order nets <strong>$30.00</strong>.</li>
+<li><strong>$60 retail, 50% off</strong> &rarr; wholesale <strong>$30.00</strong>; unit cost $17.00; profit <strong>$13.00</strong>/unit; margin <strong>43.3%</strong>; a 24-unit order nets <strong>$312.00</strong>.</li>
+<li><strong>$28 retail, 50% off</strong> &rarr; wholesale <strong>$14.00</strong>, which is <strong>below</strong> the $17.00 unit cost; the order loses <strong>$3.00</strong> per unit.</li>
+<li><strong>$40 retail at 40% off</strong> &rarr; wholesale <strong>$24.00</strong>; profit <strong>$7.00</strong>/unit; margin <strong>29.2%</strong>.</li>
+</ul>
+<p>The third line is the one to watch. A price that looks reasonable next to retail can still sit under your cost floor once packaging is included, and at volume the loss multiplies.</p>
+
+<h2>Common mistakes when setting wholesale prices</h2>
+<ul>
+<li><strong>Pricing below your own cost floor.</strong> Deducting a fixed percentage from retail never checks whether the result covers unit cost plus packaging. Read the profit line, not the price line.</li>
+<li><strong>Ignoring minimum order quantities.</strong> A low per-unit profit only works if the order is large enough to be worth the setup. Set an MOQ that makes the smallest acceptable order worthwhile.</li>
+<li><strong>Leaving out wholesale packaging.</strong> Retail packing &mdash; a gift box, a tag, tissue &mdash; costs more than the plain carton you ship to a shop. Model the wholesale pack separately.</li>
+<li><strong>Halving retail and stopping there.</strong> A 50% discount is only a convention. Check the resulting margin on this page before quoting it, and adjust the discount to hit the margin you actually need.</li>
+<li><strong>Forgetting payment terms.</strong> Net 30, net 60, or a deposit before production all change your real cash flow. A profitable order paid in 60 days can still strain a small workshop.</li>
+</ul>
+
+<h2>How to use the result</h2>
+<ul>
+<li>Compare the wholesale margin with what the same item earns at retail, then decide whether the extra volume justifies the lower figure.</li>
+<li>Test the smallest order you would realistically accept, so a low minimum does not quietly turn a good price into a bad order.</li>
+<li>Check that the buyer still has room to roughly double the item at their shelf price; if they cannot, the price will be renegotiated anyway.</li>
+</ul>
+
 <h2>Important assumptions</h2>
-<p>Results are planning estimates. Replace the default assumptions with your actual costs, rates, shipping arrangements, discounts, and sales volume. Marketplace and payment fees can change over time.</p>
+<p>Results are planning estimates, not quotations. The calculation treats packaging and seller-paid shipping as per-unit costs and uses quantity only to scale the order profit, so it excludes marketplace and payment fees, listing costs, taxes, and any one-off setup. Payment terms and minimum order quantities are commercial decisions this page cannot model. Revisit the numbers whenever your costs, your discount policy, or your production capacity changes.</p>
 </article>
 <aside class="info-card">
 <h2>Related tools</h2>
 <ul><li><a class="text-link" href="/etsy-pricing-calculator">Etsy Pricing Calculator →</a></li><li><a class="text-link" href="/etsy-fee-calculator">Etsy Fee Calculator →</a></li><li><a class="text-link" href="/etsy-profit-calculator">Etsy Profit Calculator →</a></li><li><a class="text-link" href="/handmade-pricing-calculator">Handmade Pricing Calculator →</a></li></ul>
-<div class="faq"><h3>How do I calculate a wholesale price?</h3><p>One common approach is to start from the retail price and apply a wholesale discount, then confirm that the result still covers your unit costs and desired margin.</p><h3>Should shipping be included in wholesale pricing?</h3><p>Include shipping when you are the party paying it. If the buyer pays shipping separately, do not treat that shipping amount as your per-unit cost.</p>
-<h3>Can I use this for my own business?</h3>
-<p>Yes. Enter your own numbers to create a simple planning estimate. The calculators are designed for comparison and everyday decisions.</p>
-<h3>Are these official marketplace calculators?</h3>
-<p>No. They are independent planning tools and do not represent an official marketplace or payment provider.</p>
+<div class="faq">
+<h3>How do I calculate a wholesale price?</h3>
+<p>Start from your retail price and apply the wholesale discount the buyer expects &mdash; commonly around 50% &mdash; then confirm on this page that the result still clears your unit cost, packaging, and any shipping you pay.</p>
+<h3>Why is wholesale usually about half of retail?</h3>
+<p>Because most retail buyers work to keystone pricing: they buy at one price and resell at roughly double. A 50% wholesale discount gives them that spread. It is a convention rather than a fixed rule, so some categories sit above or below it.</p>
+<h3>What if the wholesale price is below my cost?</h3>
+<p>Then the order loses money no matter how large it is. Raise the wholesale price, cut the unit cost, or reduce the discount. The calculator flags this case, and the fix is commercial rather than arithmetic.</p>
+<h3>Should packaging be included in wholesale pricing?</h3>
+<p>Yes. Wholesale packing &mdash; a carton, a protective wrap, a printed insert &mdash; is a real per-unit cost even when it looks small. Leaving it out is one of the easiest ways to misjudge a wholesale margin.</p>
+<h3>Do I need a minimum order quantity?</h3>
+<p>It depends on your setup costs. If a short run still consumes the same preparation time, a minimum protects the order&rsquo;s value. Test a small quantity here to see what the order profit actually looks like before you agree to it.</p>
+<h3>Can I sell wholesale and retail at the same time?</h3>
+<p>Yes, but keep the two price levels consistent and clearly separate. If retail buyers can find the item cheaper elsewhere than your wholesale price allows a shop to sell it, the wholesale channel will not last.</p>
 </div>
-</aside>
+<div class="pro-cta"><span class="pill">PRO</span><h3>Handmade Product Pricing Calculator PRO</h3><p>An Excel workbook that goes further than this page: batch pricing, editable fee tables, and profit tracking across your whole catalogue.</p><a class="btn btn-primary" href="/pro-excel">See the workbook</a></div></aside>
 </div>
 </section>
 </main>

@@ -69,27 +69,82 @@
 <div class="result-actions"><button id="copy">Copy Results</button><button id="tryDemo" onclick="window.scrollTo({top:0,behavior:'smooth'})">Edit Inputs</button></div>
 </aside>
 </section>
-<div class="container ad-slot">Advertisement space · This area can later be used for AdSense once the site is approved.</div>
-<section class="container content-section">
+<div class="container"><div class="viz"><div class="viz-head">Where a $27.69 Etsy price goes</div><div class="viz-bar"><span style="flex:16.5;background:#8b93a7"></span><span style="flex:2.88;background:#c83c3c"></span><span style="flex:8.31;background:#16845b"></span></div><div class="viz-legend"><span><i style="background:#8b93a7"></i>Product cost $16.50</span><span><i style="background:#c83c3c"></i>Fees $2.88</span><span><i style="background:#16845b"></i>Profit $8.31</span></div></div></div><section class="container content-section">
 <div class="content-grid">
 <article class="info-card">
-<p>Use the target profit margin to work backward from what you want to keep. The result is a planning price, so compare it with your market, product positioning, and actual checkout costs before publishing a listing.</p><p>Then enter the fee assumptions that fit your situation. This calculator keeps the percentage fees and fixed fee editable because marketplace and payment costs can vary by seller, location, and fee structure.</p><p>Start with the full cost of one finished item, not just the materials. Include labor, packaging, shipping you absorb, and any other per-item costs you need the sale to cover.</p><h2>How to Price Products on Etsy</h2><h2>What to check before you publish an Etsy price</h2><ul><li>Your complete cost per item</li><li>Your seller-paid shipping and packaging costs</li><li>The fee rates that actually apply to your shop</li><li>The profit margin you want after selling costs</li></ul><h2>How this calculator works</h2>
-<div class="formula">Suggested price = (product cost + fixed fee) ÷ (1 − target margin − percentage fee rates)</div>
-<h2>Example</h2>
-<p>With $16.50 in product cost, 6.5% transaction fees, 3% processing, a $0.25 fixed fee, and a 30% target margin, the estimate is about $26.38, with about $7.91 profit.</p>
+<p>This page answers one question that comes up before every listing: what should the item cost? The calculator works backward from your numbers — the full cost of one finished item, the fee rates that apply to your shop, and the margin you want to keep — and returns a selling price that covers all three.</p>
+<p>It is a planning tool, not a market verdict. The price it suggests is the price at which your chosen margin survives Etsy's fees. Whether buyers accept that price is a separate, human question about your photos, your niche, and what comparable listings charge. Use the number as a floor to reason from, then adjust up or down with your eyes open.</p>
+
+<h2>How to set an Etsy price</h2>
+<p>Sellers often price by instinct — double the material cost, round up to a friendly number, or copy whatever a competitor charges. Each of those shortcuts ignores at least one real cost. A more reliable order of work is:</p>
+<ul>
+<li><strong>Total the cost of one finished item.</strong> Materials actually consumed, plus the labor you put into it, the packaging, and the shipping you absorb. If a sale does not cover these, no fee rate will rescue the price.</li>
+<li><strong>Add up the percentage fees.</strong> Etsy's transaction fee and your payment processor's rate both scale with the price, so they belong inside the calculation, not as a flat subtraction bolted on afterward.</li>
+<li><strong>Decide the margin you want to keep.</strong> Margin is profit divided by the selling price. A 30% target means thirty cents of every dollar the buyer pays is profit.</li>
+<li><strong>Solve for the price.</strong> The calculator does the algebra and updates as you type, so you can watch how a change in cost or margin moves the required price.</li>
+</ul>
+
+<h2>What the price has to cover</h2>
+<p>A defensible Etsy price stands on four layers, and the most common mistake is to price for only the first:</p>
+<ul>
+<li><strong>Product cost</strong> — materials and components for one saleable unit.</li>
+<li><strong>Your labor</strong> — the hours of making, finishing, and packing, valued at a rate you would pay someone else.</li>
+<li><strong>Percentage fees</strong> — the transaction and payment rates that take a slice of every order.</li>
+<li><strong>Target profit</strong> — the margin that turns a break-even sale into a business.</li>
+</ul>
+<p>Listing fees, offsite-ads charges, currency conversion, and the cost of returns sit outside the model. They are usually small per order, but they are real, so if they matter to your margin, nudge the fixed fee or add them to your product cost before you calculate.</p>
+
+<h2>How this calculator works</h2>
+<div class="formula">Suggested price = (product cost + fixed fee) &divide; (1 &minus; target margin &minus; percentage fee rates)</div>
+<p>The percentage fees are subtracted from 1, not added to the cost, because they apply to the selling price. That is why a 30% margin with 9.5% in fees needs a price well above cost divided by 0.70. The fixed fee is added to the cost because it is charged once per order, whatever the price.</p>
+
+<h2>Worked examples</h2>
+<p>Using the default assumptions — a $0.25 fixed fee and a 9.5% combined percentage rate (6.5% + 3%):</p>
+<ul>
+<li>A <strong>$16.50</strong> item at a <strong>30%</strong> margin → selling price about <strong>$27.69</strong>, with about <strong>$2.88</strong> in fees and <strong>$8.31</strong> profit.</li>
+<li>An <strong>$8.00</strong> item at a <strong>25%</strong> margin → price about <strong>$12.60</strong>, fees about <strong>$1.45</strong>, profit about <strong>$3.15</strong>.</li>
+<li>A <strong>$45.00</strong> item at a <strong>40%</strong> margin → price about <strong>$89.60</strong>, fees about <strong>$8.76</strong>, profit about <strong>$35.84</strong>.</li>
+<li>A <strong>$2.00</strong> item at a <strong>20%</strong> margin → price about <strong>$3.19</strong>, fees about <strong>$0.55</strong>, profit about <strong>$0.64</strong>.</li>
+</ul>
+<p>Two things stand out. Higher margins push the price up faster than the cost rises, because the margin has to cover a bigger slice of a bigger number. And cheap items are the hardest to price: the fixed fee is a large share of a $3 sale, so small items need either a higher margin or a bundling strategy.</p>
+
+<h2>Common mistakes when pricing on Etsy</h2>
+<ul>
+<li><strong>Using a blanket multiplier.</strong> "Double it" ignores both the fee structure and your labor, and it produces the wrong price at every cost level.</li>
+<li><strong>Ignoring the listing fee and renewals.</strong> At $0.20 each, listing and renewal fees look harmless until they run across hundreds of listings every few months.</li>
+<li><strong>Forgetting offsite ads.</strong> On an order that came through an offsite ad, that fee can be the single largest charge on the sale, and it can swallow an entire 15% margin.</li>
+<li><strong>Skipping the market check.</strong> A price that protects your margin is not automatically a price buyers will pay. Compare with similar listings before you commit.</li>
+<li><strong>Leaving out packaging and shipping.</strong> Free shipping is not free; if you absorb it, it belongs in the product cost, not in a footnote.</li>
+</ul>
+
+<h2>How to use the result</h2>
+<ul>
+<li>Use the suggested price as your floor, then test a few price points above it to see how the margin responds.</li>
+<li>Re-run the numbers with the real fee rates from your seller dashboard before you publish, and again whenever a fee changes.</li>
+<li>Check the price against your market; if it sits far above comparable listings, the gap tells you to cut cost or labor — not to quietly drop your margin.</li>
+</ul>
+
 <h2>Important assumptions</h2>
-<p>Results are planning estimates. Replace the default assumptions with your actual costs, rates, shipping arrangements, discounts, and sales volume. Marketplace and payment fees can change over time.</p>
+<p>The suggested price is a planning estimate. The fee rates are editable assumptions, not official Etsy numbers — they vary by country, payment method, and account, and they change over time. The model does not include listing fees, offsite-ads charges, discounts, sales tax, or the cost of returns. Confirm the rates that apply to you and revisit the price whenever your costs or your shop's fee structure change.</p>
 </article>
 <aside class="info-card">
 <h2>Related tools</h2>
 <ul><li><a class="text-link" href="/etsy-fee-calculator">Etsy Fee Calculator →</a></li><li><a class="text-link" href="/etsy-profit-calculator">Etsy Profit Calculator →</a></li><li><a class="text-link" href="/handmade-pricing-calculator">Handmade Pricing Calculator →</a></li><li><a class="text-link" href="/craft-fair-pricing-calculator">Craft Fair Pricing Calculator →</a></li></ul>
-<div class="faq"><h3>How do I calculate a selling price on Etsy?</h3><p>Add your product cost and the fees you expect to pay, then work backward from your target profit margin. The calculator solves for a price that can cover those inputs.</p><h3>Is this an official Etsy calculator?</h3><p>No. This is an independent planning tool. Etsy fees can change, so verify the rates that apply to your account before using the result for a live listing.</p>
-<h3>Can I use this for my own business?</h3>
-<p>Yes. Enter your own numbers to create a simple planning estimate. The calculators are designed for comparison and everyday decisions.</p>
-<h3>Are these official marketplace calculators?</h3>
-<p>No. They are independent planning tools and do not represent an official marketplace or payment provider.</p>
+<div class="faq">
+<h3>How do I calculate a selling price on Etsy?</h3>
+<p>Total the cost of one finished item, add the percentage fees and the fixed fee, choose the margin you want to keep, then solve for the price. This calculator does that in one step using the editable rates you enter.</p>
+<h3>What margin should I aim for on Etsy?</h3>
+<p>There is no universal figure. Many sellers work to a 25&ndash;40% margin, but the right target depends on your costs, your niche, and how much of the price the market will accept. Treat the default 30% as a starting point you adjust.</p>
+<h3>Does this include Etsy's listing fee and offsite ads?</h3>
+<p>No. The model covers the percentage fees and the fixed fee you enter. Listing fees, offsite-ads charges, and currency conversion are left out, so add them to your cost or fixed fee if they matter to your margin.</p>
+<h3>Why is the price so much higher than my cost?</h3>
+<p>Because the margin and the fees both have to fit inside the selling price, not on top of the cost. A 30% margin plus 9.5% in fees leaves roughly 60% of the price to cover the item — so the price is about 1.65 times the cost, before any profit buffer.</p>
+<h3>Should I use markup or margin to price my listings?</h3>
+<p>Margin is the more useful target for a marketplace, because percentage fees apply to the selling price. Markup is calculated from cost, which makes it easy to set a price that looks healthy but leaves too little after fees.</p>
+<h3>Is this an official Etsy calculator?</h3>
+<p>No. It is an independent planning tool with no affiliation to Etsy. Etsy's rates can change, so verify them in your own account before relying on the result for a live listing.</p>
 </div>
-</aside>
+<div class="pro-cta"><span class="pill">PRO</span><h3>Handmade Product Pricing Calculator PRO</h3><p>An Excel workbook that goes further than this page: batch pricing, editable fee tables, and profit tracking across your whole catalogue.</p><a class="btn btn-primary" href="/pro-excel">See the workbook</a></div></aside>
 </div>
 </section>
 </main>

@@ -59,27 +59,75 @@
 <div class="result-actions"><button id="copy">Copy Results</button><button id="tryDemo" onclick="window.scrollTo({top:0,behavior:'smooth'})">Edit Inputs</button></div>
 </aside>
 </section>
-<div class="container ad-slot">Advertisement space · This area can later be used for AdSense once the site is approved.</div>
-<section class="container content-section">
+<div class="container"><div class="viz"><div class="viz-head">Where each $25.00 sale goes</div><div class="viz-bar"><span style="flex:10;background:#8b93a7"></span><span style="flex:15;background:#5b5cf0"></span></div><div class="viz-legend"><span><i style="background:#8b93a7"></i>Variable cost $10.00</span><span><i style="background:#5b5cf0"></i>Toward fixed costs $15.00</span></div></div></div><section class="container content-section">
 <div class="content-grid">
 <article class="info-card">
-<p>The result is useful for product launches, small businesses, events, and other decisions where you need to know the sales volume required to cover costs.</p><p>The difference between selling price and variable cost is your contribution per unit. Fixed costs divided by that contribution gives the break-even volume, rounded up to the next whole unit.</p><p>Start with fixed costs: expenses that stay broadly the same regardless of how many units you sell. Then enter the selling price and variable cost per unit.</p><h2>How to Calculate Break-Even Units</h2><h2>Use break-even analysis to test scenarios</h2><ul><li>Change the selling price to test pricing options</li><li>Increase variable costs to model higher fulfillment costs</li><li>Adjust fixed costs for a new event or launch</li><li>Test conservative and optimistic sales assumptions separately</li></ul><h2>How this calculator works</h2>
-<div class="formula">Break-even units = fixed costs ÷ (selling price − variable cost per unit), rounded up</div>
-<h2>Example</h2>
-<p>With $1,200 fixed costs, a $25 selling price, and $10 variable cost per unit, break-even is 80 units.</p>
+<p>A break-even calculation tells you how many units you must sell before the money coming in covers the money going out. Below that volume you are funding the business from your own pocket; above it, every extra unit adds profit. This calculator takes your fixed costs, a selling price, and a variable cost per unit, and returns the number of units needed to break even, rounded up to the next whole unit.</p>
+
+<h2>Fixed and variable costs</h2>
+<p>The whole method rests on one distinction. Fixed costs do not change when you sell one more unit: a stall fee, a software subscription, a booth deposit, a one-time mould or die. Variable costs rise with every unit you make or ship: materials, packaging, payment fees, per-order postage. Splitting your expenses into these two buckets is most of the work; the arithmetic is small by comparison.</p>
+<p>Getting the split wrong is the fastest way to a wrong answer. File materials under fixed costs, or a stall fee under variable, and the break-even figure will be off by an amount that is hard to see and easy to act on.</p>
+
+<h2>Contribution per unit</h2>
+<p>The bridge between the two cost types is contribution: the selling price minus the variable cost per unit, or the dollars each sale contributes toward fixed costs and, once those are covered, toward profit.</p>
+<ul>
+<li>Contribution per unit = price &minus; variable cost</li>
+<li>Total contribution = contribution per unit &times; units sold</li>
+<li>Break-even units = fixed costs &divide; contribution per unit</li>
+</ul>
+<p>Contribution is the number to watch. Raise the price or cut a variable cost and contribution rises, which lowers the break-even volume quickly because it sits in the denominator. If the selling price falls below the variable cost, contribution turns negative and there is no break-even point at all &mdash; each sale digs the hole deeper, and the calculator flags that case.</p>
+
+<h2>The formula</h2>
+<div class="formula">Break-even units = fixed costs &divide; (selling price &minus; variable cost per unit), rounded up</div>
+<p>Because you cannot sell a fraction of a unit, the result is always rounded up. If the division gives 291.7 units, you need 292 to be fully covered. Break-even revenue is that rounded unit count multiplied by the selling price.</p>
+
+<h2>Worked examples</h2>
+<p>Each row shows the contribution per unit, the resulting break-even units, and the revenue those units represent.</p>
+<ul>
+<li>Fixed <strong>$1,200</strong>, price <strong>$25</strong>, variable <strong>$10</strong> &rarr; contribution <strong>$15</strong> &rarr; <strong>80 units</strong>, <strong>$2,000</strong> revenue</li>
+<li>Fixed <strong>$2,000</strong>, price <strong>$50</strong>, variable <strong>$30</strong> &rarr; contribution <strong>$20</strong> &rarr; <strong>100 units</strong>, <strong>$5,000</strong> revenue</li>
+<li>Fixed <strong>$3,500</strong>, price <strong>$30</strong>, variable <strong>$18</strong> &rarr; contribution <strong>$12</strong> &rarr; <strong>292 units</strong> (291.7 rounded up), <strong>$8,760</strong> revenue</li>
+<li>Fixed <strong>$1,000</strong>, price <strong>$22</strong>, variable <strong>$17</strong> &rarr; contribution <strong>$5</strong> &rarr; <strong>200 units</strong>, <strong>$4,400</strong> revenue</li>
+</ul>
+<p>The third row shows why rounding matters: at 291 units you are a fraction short, and only the 292nd unit clears the fixed costs. The last row shows how thin contribution stretches the target &mdash; at $5 per unit it takes 200 sales to clear $1,000, where the first row clears $1,200 with only 80.</p>
+
+<h2>Common mistakes</h2>
+<ul>
+<li><strong>Mixing up fixed and variable costs.</strong> A stall fee is fixed even though it is paid per event; packaging is variable even though it costs the same per unit. Sort by behaviour, not by amount.</li>
+<li><strong>Leaving fees out of variable cost.</strong> Platform commissions, payment processing, and per-order shipping belong in the variable column. Omit them and the break-even point looks far easier to reach than it is.</li>
+<li><strong>Treating break-even as a profit target.</strong> Break-even is the point of zero profit. Selling exactly that many units covers costs and pays nothing for your time.</li>
+<li><strong>Forgetting that the answer rounds up.</strong> A calculated 291.7 means 292 units. Rounding down leaves fixed costs partly uncovered.</li>
+<li><strong>Running the numbers once.</strong> Break-even shifts whenever price or cost changes, and a single early estimate goes stale quickly.</li>
+</ul>
+
+<h2>How to use the result</h2>
+<ul>
+<li>Compare the break-even volume with a realistic sales estimate &mdash; if you cannot plausibly sell that many, the price or cost structure needs to change.</li>
+<li>Run the calculation at several prices to see how sensitive the break-even point is to a small discount.</li>
+<li>Set a target above break-even that also covers your time, and treat break-even as the floor rather than the goal.</li>
+</ul>
+
 <h2>Important assumptions</h2>
-<p>Results are planning estimates. Replace the default assumptions with your actual costs, rates, shipping arrangements, discounts, and sales volume. Marketplace and payment fees can change over time.</p>
+<p>Results are planning estimates and assume the selling price and variable cost per unit stay constant across every unit sold &mdash; no volume discounts, no tiered pricing, no change in materials. Fixed costs are treated as one lump summed for the period you have in mind. Taxes, financing, and your own time are not included unless you count them yourself. Because price and cost both move, revisit the numbers whenever you change a listing, a supplier, or a fee structure.</p>
 </article>
 <aside class="info-card">
 <h2>Related tools</h2>
 <ul><li><a class="text-link" href="/etsy-pricing-calculator">Etsy Pricing Calculator →</a></li><li><a class="text-link" href="/etsy-fee-calculator">Etsy Fee Calculator →</a></li><li><a class="text-link" href="/etsy-profit-calculator">Etsy Profit Calculator →</a></li><li><a class="text-link" href="/handmade-pricing-calculator">Handmade Pricing Calculator →</a></li></ul>
-<div class="faq"><h3>What is a break-even point?</h3><p>It is the point where total revenue covers the fixed and variable costs included in the calculation, leaving zero profit before any costs you did not enter.</p><h3>What happens if my selling price is below variable cost?</h3><p>Each additional sale loses money before fixed costs are covered, so a normal unit break-even calculation is not meaningful. The calculator flags that situation.</p>
-<h3>Can I use this for my own business?</h3>
-<p>Yes. Enter your own numbers to create a simple planning estimate. The calculators are designed for comparison and everyday decisions.</p>
-<h3>Are these official marketplace calculators?</h3>
-<p>No. They are independent planning tools and do not represent an official marketplace or payment provider.</p>
+<div class="faq">
+<h3>What is a break-even point?</h3>
+<p>It is the sales volume at which total revenue exactly covers the fixed and variable costs you entered, leaving zero profit. Below it you are losing money; every unit above it contributes to profit.</p>
+<h3>How is break-even units calculated?</h3>
+<p>Subtract the variable cost per unit from the selling price to get contribution per unit, then divide fixed costs by that contribution. Round the result up, because you cannot sell a fraction of a unit.</p>
+<h3>What if my selling price is below variable cost?</h3>
+<p>Then contribution is negative and no volume can break even &mdash; each sale increases the loss. The calculator flags this case. Either raise the price or cut the variable cost before the product can work.</p>
+<h3>Are payment and platform fees a fixed or variable cost?</h3>
+<p>Variable. They scale with each sale, so they belong in the variable cost per unit. Leaving them out makes the break-even point look lower than it really is.</p>
+<h3>Is break-even the same as a profit target?</h3>
+<p>No. Break-even is the point of zero profit. It covers costs but pays nothing for your time, so most sellers set a target above it.</p>
+<h3>Why does the calculator round up?</h3>
+<p>Because units are whole. If the calculation returns 291.7 units, selling 291 leaves a small part of the fixed costs uncovered, so 292 is the true break-even volume.</p>
 </div>
-</aside>
+<div class="pro-cta"><span class="pill">PRO</span><h3>Handmade Product Pricing Calculator PRO</h3><p>An Excel workbook that goes further than this page: batch pricing, editable fee tables, and profit tracking across your whole catalogue.</p><a class="btn btn-primary" href="/pro-excel">See the workbook</a></div></aside>
 </div>
 </section>
 </main>

@@ -59,27 +59,74 @@
 <div class="result-actions"><button id="copy">Copy Results</button><button id="tryDemo" onclick="window.scrollTo({top:0,behavior:'smooth'})">Edit Inputs</button></div>
 </aside>
 </section>
-<div class="container ad-slot">Advertisement space · This area can later be used for AdSense once the site is approved.</div>
-<section class="container content-section">
+<div class="container"><div class="viz"><div class="viz-head">Where a $50.00 sale goes</div><div class="viz-bar"><span style="flex:20;background:#8b93a7"></span><span style="flex:30;background:#16845b"></span></div><div class="viz-legend"><span><i style="background:#8b93a7"></i>Cost $20.00</span><span><i style="background:#16845b"></i>Profit $30.00</span></div></div></div><section class="container content-section">
 <div class="content-grid">
 <article class="info-card">
-<p>Quantity does not change the per-sale margin in this calculator. It lets you estimate the total profit that the same unit economics would generate at a chosen sales volume.</p><p>Markup uses a different base: cost. That is why a 50% markup does not produce a 50% margin. Use the calculator to see both numbers side by side instead of mixing the two formulas.</p><p>Profit is the money left after cost is subtracted from revenue. Profit margin expresses that profit as a percentage of revenue, which makes it useful for comparing products and sales situations.</p><h2>How to Calculate Profit Margin</h2><h2>Margin vs. markup at a glance</h2><ul><li>Margin = profit ÷ revenue</li><li>Markup = profit ÷ cost</li><li>Total profit = profit per calculation × quantity</li><li>A zero-revenue case cannot produce a meaningful percentage margin</li></ul><h2>How this calculator works</h2>
-<div class="formula">Profit = revenue − cost; profit margin = profit ÷ revenue × 100; markup = profit ÷ cost × 100</div>
-<h2>Example</h2>
-<p>With $5,000 revenue and $3,250 cost, profit is $1,750, profit margin is 35%, and markup is about 53.8%.</p>
+<p>Profit margin answers a simple question: of every dollar you take in, how much is left as profit? It is one of the most useful single numbers in a small business, because it normalizes profit against the size of the sale. A $3 profit means something very different on a $10 item than on a $100 item, and margin makes that difference visible. This calculator takes revenue and cost and returns profit, profit margin, markup, and the total profit at a chosen quantity.</p>
+
+<h2>What profit margin measures</h2>
+<p>Margin is a ratio, not an amount. It expresses profit as a percentage of revenue so that two products at very different price points can be compared on the same scale. Because margin uses revenue as its base, it is the figure accountants and buyers usually mean when they say "margin", and it is the number that has to absorb everything you have not counted yet: marketplace fees, packaging, refunds, and your own time.</p>
+<p>The calculator also returns markup, which divides the same profit by cost instead of revenue. The two ratios describe one pool of money from two different bases, which is why they almost never produce the same percentage.</p>
+
+<h2>Margin vs. markup</h2>
+<p>The most common source of confusion in pricing is treating margin and markup as the same thing. They are not. Both start from the same profit figure, but each divides it by a different number:</p>
+<ul>
+<li><strong>Profit margin</strong> &mdash; profit divided by <strong>revenue</strong>. It tells you what share of the sale price you keep.</li>
+<li><strong>Markup</strong> &mdash; profit divided by <strong>cost</strong>. It tells you how much you added on top of what the item cost you.</li>
+</ul>
+<p>Because revenue is always larger than cost on a profitable item, markup is always the higher of the two percentages. A product priced at a 50% markup does not earn a 50% margin &mdash; it earns about 33.3%. The gap widens as the markup rises, which is why a seller who quotes a "50% margin" while actually applying a 50% markup is quietly undercharging.</p>
+
+<h2>The formulas</h2>
+<div class="formula">Profit = revenue &minus; cost; profit margin = profit &divide; revenue &times; 100; markup = profit &divide; cost &times; 100</div>
+<p>Two edge cases matter. If revenue is zero, margin has no meaning because you cannot divide by zero, and the calculator reports it as N/A. If cost is zero, markup is undefined for the same reason. Neither case is a bug &mdash; it is the formula telling you the base is missing.</p>
+
+<h2>Worked examples</h2>
+<p>Each row uses the same formula. Notice how margin and markup diverge as the ratio changes.</p>
+<ul>
+<li>Cost <strong>$20</strong>, price <strong>$50</strong> &rarr; profit <strong>$30</strong>, margin <strong>60.0%</strong>, markup <strong>150.0%</strong></li>
+<li>Cost <strong>$6</strong>, price <strong>$10</strong> &rarr; profit <strong>$4</strong>, margin <strong>40.0%</strong>, markup <strong>66.7%</strong></li>
+<li>Cost <strong>$45</strong>, price <strong>$60</strong> &rarr; profit <strong>$15</strong>, margin <strong>25.0%</strong>, markup <strong>33.3%</strong></li>
+<li>Cost <strong>$9</strong>, price <strong>$25</strong> &rarr; profit <strong>$16</strong>, margin <strong>64.0%</strong>, markup <strong>177.8%</strong></li>
+</ul>
+<p>The second and third rows show the point most clearly: a 40% margin came from a 66.7% markup, while a 25% margin came from a 33.3% markup. In both cases the markup is the larger number, and the higher the ratio the wider the gap.</p>
+
+<h2>Common mistakes</h2>
+<ul>
+<li><strong>Using cost as the margin denominator.</strong> Margin divides by revenue. Dividing by cost produces markup, and the two answers are never the same.</li>
+<li><strong>Reading a markup as if it were a margin.</strong> A 100% markup is a 50% margin, not a 100% margin. The gap grows with the number.</li>
+<li><strong>Leaving transaction fees out of cost.</strong> Marketplace and payment fees come out of revenue, so folding them into cost before calculating gives a truer profit figure.</li>
+<li><strong>Comparing margin across different volumes.</strong> Quantity scales total profit but never changes margin. Two rows with the same ratio have the same margin at any volume.</li>
+<li><strong>Treating a negative profit as a margin problem.</strong> If cost exceeds revenue the margin is negative at any price; the issue is the underlying cost, not the percentage.</li>
+</ul>
+
+<h2>How to use the result</h2>
+<ul>
+<li>Set a target margin first, then work backwards to the price that delivers it, rather than pricing and hoping the margin is acceptable.</li>
+<li>Compare margin across your products to see which items actually fund the business and which only look busy.</li>
+<li>Re-run the numbers whenever costs change &mdash; a small rise in materials or fees can move margin more than a price increase would.</li>
+</ul>
+
 <h2>Important assumptions</h2>
-<p>Results are planning estimates. Replace the default assumptions with your actual costs, rates, shipping arrangements, discounts, and sales volume. Marketplace and payment fees can change over time.</p>
+<p>Results are planning estimates, not accounting statements. Revenue and cost are treated as the only two inputs, so taxes, refunds, shipping subsidies, and your own labour are excluded unless you fold them into cost yourself. Quantity affects total profit only; it never changes the per-unit margin. Replace the defaults with your real figures before making a pricing decision, and revisit them as costs and marketplace fees change.</p>
 </article>
 <aside class="info-card">
 <h2>Related tools</h2>
 <ul><li><a class="text-link" href="/etsy-pricing-calculator">Etsy Pricing Calculator →</a></li><li><a class="text-link" href="/etsy-fee-calculator">Etsy Fee Calculator →</a></li><li><a class="text-link" href="/etsy-profit-calculator">Etsy Profit Calculator →</a></li><li><a class="text-link" href="/handmade-pricing-calculator">Handmade Pricing Calculator →</a></li></ul>
-<div class="faq"><h3>What is the formula for profit margin?</h3><p>Profit margin equals profit divided by revenue, multiplied by 100. First calculate profit as revenue minus cost.</p><h3>Why is my markup higher than my margin?</h3><p>Markup and margin use different denominators. Markup divides profit by cost, while margin divides profit by selling revenue, so markup is usually higher for a profitable sale.</p>
-<h3>Can I use this for my own business?</h3>
-<p>Yes. Enter your own numbers to create a simple planning estimate. The calculators are designed for comparison and everyday decisions.</p>
-<h3>Are these official marketplace calculators?</h3>
-<p>No. They are independent planning tools and do not represent an official marketplace or payment provider.</p>
+<div class="faq">
+<h3>What is the formula for profit margin?</h3>
+<p>Profit margin equals profit divided by revenue, multiplied by 100. Calculate profit first as revenue minus cost, then divide it by revenue. A $50 sale with a $20 cost gives $30 of profit and a 60% margin.</p>
+<h3>Why is my markup higher than my margin?</h3>
+<p>Because the two ratios use different denominators. Markup divides profit by cost; margin divides the same profit by revenue. Revenue is larger than cost on any profitable item, so markup is always the higher percentage.</p>
+<h3>Is a 50% markup the same as a 50% margin?</h3>
+<p>No. A 50% markup on a $20 cost produces a $30 price, and that $10 profit is only a 33.3% margin. To reach a 50% margin you need a 100% markup.</p>
+<h3>How do I hit a target margin?</h3>
+<p>Work backwards from the margin. Price equals cost divided by one minus the target margin. For a 40% margin on a $30 cost, divide 30 by 0.6 to get a $50 price, then check that fees still leave the margin intact.</p>
+<h3>Should I use margin or markup day to day?</h3>
+<p>Use markup to set the price quickly from cost, and margin to judge whether that price actually works for the business. They answer different questions, so most sellers end up using both.</p>
+<h3>Why does the calculator show N/A?</h3>
+<p>Margin is undefined when revenue is zero, and markup is undefined when cost is zero, because neither can divide by zero. Enter a positive figure in both fields to see a result.</p>
 </div>
-</aside>
+<div class="pro-cta"><span class="pill">PRO</span><h3>Handmade Product Pricing Calculator PRO</h3><p>An Excel workbook that goes further than this page: batch pricing, editable fee tables, and profit tracking across your whole catalogue.</p><a class="btn btn-primary" href="/pro-excel">See the workbook</a></div></aside>
 </div>
 </section>
 </main>
