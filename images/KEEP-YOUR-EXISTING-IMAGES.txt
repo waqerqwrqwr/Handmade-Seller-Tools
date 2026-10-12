@@ -1,1 +1,0 @@
-Keep your existing screenshot PNGs in this folder. Expected: dashboard.png, pricing-calculator.png, product-database.png, wholesale-calculator.png
